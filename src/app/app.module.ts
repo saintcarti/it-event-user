@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// Importa correctamente el módulo QRCode
+// Importa el módulo QRCode
 import { QRCodeModule } from 'angularx-qrcode';
 
 // Firebase imports
@@ -27,15 +27,14 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    QRCodeModule,  // Correct import of QRCode module
-    // Import Firebase modules and initialize Firebase with the environment configuration
+    QRCodeModule,  // Importa el módulo QRCode
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideHttpClient(),
-    AuthService // Register AuthService as a provider
+    AuthService // Registra AuthService como un proveedor
   ],
   bootstrap: [AppComponent],
 })
