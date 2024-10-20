@@ -13,15 +13,15 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/headers/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    loadChildren: () => import('./pages/auth/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
     path: 'recuperar',
-    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+    loadChildren: () => import('./pages/auth/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
     path: 'tab4',
@@ -29,11 +29,11 @@ const routes: Routes = [
   },
   {
     path: 'editar',
-    loadChildren: () => import('./editar/editar.module').then(m => m.EditarModule) // Asegúrate de que el nombre del módulo sea correcto
+    loadChildren: () => import('./pages/user/editar/editar.module').then(m => m.EditarModule) // Asegúrate de que el nombre del módulo sea correcto
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/user/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 ];
 @NgModule({
