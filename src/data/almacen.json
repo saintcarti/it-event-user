@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "image": "/img/Taller1.png",
+      "name": "Taller de Desarrollo Web con JavaScript",
+      "date": "2024-11-05",
+      "place": "Centro de Capacitación TechHub",
+      "id":"1",
+      "description": "Aprende las bases del desarrollo web utilizando JavaScript moderno, incluyendo frameworks populares como React y Vue.js. Dirigido a principiantes y desarrolladores intermedios."
+    },
+    {
+      "image": "https://example.com/event2.jpg",
+      "name": "Curso Intensivo de Ciberseguridad",
+      "date": "2024-12-15",
+      "place": "Universidad Tecnológica",
+      "id":"2",
+      "description": "Un curso completo sobre ciberseguridad que cubre desde la protección de redes hasta la seguridad en aplicaciones web. Ideal para profesionales de TI y estudiantes avanzados."
+    },
+    {
+      "image": "https://example.com/event3.jpg",
+      "name": "Conferencia Internacional de Inteligencia Artificial",
+      "date": "2024-12-01",
+      "place": "Centro de Convenciones Digital",
+      "id":"3",
+      "description": "Una conferencia que reúne a expertos del mundo en inteligencia artificial para discutir los avances más recientes en machine learning, redes neuronales y sus aplicaciones en el mundo real."
+    },
+    {
+      "image": "https://example.com/event4.jpg",
+      "name": "Workshop de DevOps y Automatización",
+      "date": "2024-10-22",
+      "place": "Laboratorio TechZone",
+      "id":"4",
+      "description": "Un taller práctico sobre cómo implementar prácticas de DevOps, automatización de despliegues y herramientas CI/CD en proyectos de software. Incluye uso de Docker, Kubernetes y Jenkins."
+    },
+    {
+      "image": "https://example.com/event5.jpg",
+      "name": "Hackathon de Ciberseguridad",
+      "date": "2024-11-20",
+      "place": "Oficinas CyberSafe",
+      "id":"5",
+      "description": "Una competencia intensa donde los participantes ponen a prueba sus habilidades de hacking ético y seguridad informática, resolviendo retos en tiempo real. Abierto a todos los niveles."
+    },
+    {
+      "image": "https://example.com/event6.jpg",
+      "name": "Curso de Programación en Python para Ciencia de Datos",
+      "date": "2024-11-10",
+      "place": "Academia Online DataMasters",
+      "id":"6",
+      "description": "Curso especializado en Python orientado al análisis de datos y machine learning. Perfecto para quienes desean iniciar una carrera en ciencia de datos o mejorar sus habilidades en este campo."
+    },
+    {
+      "image": "https://example.com/event7.jpg",
+      "name": "Seminario sobre Blockchain y Criptomonedas",
+      "date": "2024-12-05",
+      "place": "Auditorio Blockchain Innovators",
+      "id":"7",
+      "description": "Seminario sobre los fundamentos del blockchain y las criptomonedas. Conoce las tecnologías que impulsan las cadenas de bloques y cómo se están utilizando en industrias como finanzas y logística."
+    },
+    {
+      "image": "https://example.com/event8.jpg",
+      "name": "Taller de Desarrollo de Aplicaciones Móviles con Flutter",
+      "date": "2024-10-28",
+      "place": "Campus Tecnológico Creativa",
+      "id":"8",
+      "description": "Taller práctico donde aprenderás a crear aplicaciones móviles con Flutter, el framework de Google, utilizando Dart. Dirigido a desarrolladores que quieran incursionar en el desarrollo móvil multiplataforma."
+    },
+    {
+      "image": "https://example.com/event9.jpg",
+      "name": "Seminario de Seguridad en la Nube",
+      "date": "2024-11-25",
+      "place": "Centro de Convenciones CloudSec",
+      "id":"9",
+      "description": "Un seminario sobre las mejores prácticas de seguridad en la nube. Explora estrategias para proteger entornos de nube pública y privada, cubriendo plataformas como AWS, Azure y Google Cloud."
+    },
+    {
+      "image": "https://example.com/event10.jpg",
+      "name": "Jornada de Desarrollo de Videojuegos con Unity",
+      "date": "2024-10-30",
+      "place": "Academia Creativa",
+      "id":"10",
+      "description": "Una jornada completa para aprender a desarrollar videojuegos utilizando Unity. Desde el diseño de personajes hasta la programación de la lógica del juego. Ideal para quienes buscan introducirse en la industria del gaming."
+    }
+  ]
+}
