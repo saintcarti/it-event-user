@@ -1,0 +1,50 @@
+<ion-header color="dark" [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title>
+      Agendar Evento
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nombre del Evento</ion-card-title>
+
+      <ion-item button (click)="abrirCalendario()">
+        <ion-label>
+          Fecha del Evento: {{ fechaSeleccionada ? fechaSeleccionada : 'Seleccionar Fecha' }}
+        </ion-label>
+      </ion-item>
+
+      
+      <ion-datetime 
+        *ngIf="mostrarCalendario"
+        [(ngModel)]="fechaSeleccionada" 
+        (ionCancel)="cerrarCalendario()" 
+        (ionChange)="cerrarCalendario()"
+        display-format="DD/MM/YYYY">
+      </ion-datetime>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-button expand="full"(click)="agendarEvento()" >
+        Agendar Evento
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card>
+    <ion-card-title>Descripcion de Evento</ion-card-title>
+    <p>La Carrera de Informática y Telecomunicaciones de la sede de Maipú organiza regularmente diversas actividades,
+    seminarios y talleres que buscan fortalecer las competencias técnicas de los estudiantes en áreas clave como 
+    redes e informática. Estos eventos, realizados durante cada período académico, 
+    están dirigidos a estudiantes de todas las carreras relacionadas, brindándoles la oportunidad de 
+    adquirir conocimientos actualizados y relevantes en un entorno práctico y colaborativo.</p>
+    <img src="/assets/Imagenes/Taller1.png" alt="img">
+  </ion-card>
+    
+</ion-content>

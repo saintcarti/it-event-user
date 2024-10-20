@@ -1,0 +1,56 @@
+<ion-menu color="dark" side="end" menu-id="first" content-id="main-content">
+  <ion-header>
+    <ion-toolbar mode=ios color="success" >
+      <ion-icon slot="start" name="earth-outline" size="large" style="padding-left: 15px;"></ion-icon>
+      <ion-title>Bienvenido!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button href="/perfil">
+        <ion-icon color="success" slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label color="warning">Mi Perfil</ion-label>
+      </ion-item>
+      <ion-item button href="/editar">
+        <ion-icon color="success" slot="start" name="settings-outline"></ion-icon>
+        <ion-label color="warning">Editar</ion-label>
+      </ion-item>
+      <ion-item button href="">
+        <ion-icon color="success" slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-label color="warning">Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+  <ion-header>
+    <ion-toolbar color="success">
+      <ion-title>IT-Event-User</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button menu="first">
+          <ion-icon name="menu-outline"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="tab1" href="/tabs/tab1">
+        <ion-icon aria-hidden="true" name="home-outline" color="success"></ion-icon>
+        <ion-label color="warning">Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-icon aria-hidden="true" name="calendar-outline" color="success"></ion-icon>
+        <ion-label color="warning">Eventos</ion-label>
+      </ion-tab-button>
+      
+      <ion-tab-button tab="tab4" href="/tabs/tab4">
+        <ion-icon aria-hidden="true" name="qr-code-outline" color="success"></ion-icon>
+        <ion-label color="warning">Codigo QR</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
