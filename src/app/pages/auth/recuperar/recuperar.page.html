@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar mode="ios" color="success">
+<ion-header color="white">
+  <ion-toolbar mode="ios" color="primary">
     <ion-title>Recuperar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,14 +15,14 @@
         <ion-label position="floating">Correo Electrónico</ion-label>
         <ion-input type="email" required [(ngModel)]="email"></ion-input>
       </ion-item>
-      <ion-button expand="full" color="success" (click)="recuperar()">Enviar</ion-button>
-      <ion-button expand="full" color="success" (click)="goToInicio()">Volver al Inicio</ion-button>
+      <ion-button expand="full" color="primary" (click)="recuperar()">Enviar</ion-button>
+      <ion-button expand="full" color="primary" (click)="goToInicio()">Volver al Inicio</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="success">
+  <ion-toolbar color="primary">
     <ion-title>IT-Event-User</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear">
