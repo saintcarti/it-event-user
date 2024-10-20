@@ -11,25 +11,23 @@ export class AuthService {
 
   constructor(private httpclient: HttpClient) { }
 
-  GetAllUsers():Observable<Users[]>{
+  GetAllUsers(): Observable<Users[]> {
     return this.httpclient.get<Users[]>(`${environment.apiUrl}/usuarios`);
   }
 
-  GetUserByCorreo(usuario:any):Observable<Users>{
-    return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?correo=${usuario}`);
+  GetUserByCorreo(usuario: any): Observable<Users> {
+    return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?email=${usuario}`);
   }
 
-  IsLoggedIn(){
-    return sessionStorage.getItem('username')!=null;
+  IsLoggedIn() {
+    return sessionStorage.getItem('username') != null;
   }
 
-  PostUsuario(newUsuario:UserNuevo): Observable<UserNuevo>{
-    return this.httpclient.post<Users>(`${environment.apiUrl}/usuarios`, newUsuario);
+  PostUsuario(newUsuario: UserNuevo): Observable<UserNuevo> {
+    return this.httpclient.post<UserNuevo>(`${environment.apiUrl}/usuarios`, newUsuario);
   }
-  
-  GetUsuarioId(id:number):Observable<Users>{
+
+  GetUsuarioId(id: number): Observable<Users> {
     return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?id=${id}`);
   }
-
-  
 }

@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/headers/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/auth/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'registro',

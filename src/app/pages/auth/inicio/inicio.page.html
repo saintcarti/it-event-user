@@ -1,0 +1,46 @@
+<ion-header color="white">
+  <ion-toolbar>
+    
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input type="email" placeholder="Ingrese correo electronico..." label="correo" labelPlacement="floating"
+        formControlName="email">
+      </ion-input>
+    </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty||
+              loginForm.get('email')?.touched)">
+      *Campo requerido
+    </div>
+      <div id="alerta" *ngIf="loginForm.get('email')?.hasError('email')">
+        *Correo invalido
+      </div>
+    <ion-item>
+      <ion-input type="password" placeholder="Ingrese su contraseña..." label="Contraseña: " labelPlacement="floating"
+      formControlName="password"></ion-input>
+    </ion-item>
+    <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty||
+              loginForm.get('password')?.touched)">
+      *Campo requerido
+    </div>
+    <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+      *La contraseña debe tener al menos 6 caracteres
+    </div>
+
+    <div>
+      <ion-button (click)="login()" expand="block" fill="clear" shape="round" [disabled]="loginForm.invalid">
+        Entrar
+      </ion-button>
+    </div>
+    <div>
+      <ion-button (click)="registrar()" expand="block" fill="clear" shape="round">
+        Registrarse
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
