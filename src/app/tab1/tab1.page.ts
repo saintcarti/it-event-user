@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiEventosService } from '../services/api-eventos.service';
 
 interface Actividad {
   titulo: string;
@@ -12,11 +13,28 @@ interface Actividad {
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page implements OnInit {
+  eventos :any[]=[]
   
+  constructor(private apiuser:ApiEventosService) {}
 
-  constructor() {}
+  ngOnInit() {
+    this.Eventos()
+  }
 
-  ngOnInit() {}
+  swiperSlideChanged(e:any){
+    console.log('Cambio de slide', e);
+  }
+  
+  Eventos(){
+    this.apiuser.getEvents().subscribe(datos=> 
+      this.eventos = datos,
+    )
+  }
+  getImagePath(imagen: string): string {
+    return `assets/Imagenes/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
+  }
 
-   
+  contactar(){
+    
+  }
 }

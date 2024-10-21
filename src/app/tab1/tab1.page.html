@@ -1,13 +1,30 @@
-<ion-header color="white" [translucent]="true">
-  <ion-toolbar mode="ios">
-    <ion-title>
-      Actividades
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
 
-<ion-content color="white" [fullscreen]="true">
-  
-  
+  <h2 style="text-align: center;">Eventos proximos</h2>
+  <swiper-container
+    (slideChange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true">
+    <swiper-slide *ngFor="let e of eventos">
+      
+      <h2 style="text-align: center;">{{e.nombre}}</h2>
+      <div style="align-items: center;">
+        <ion-img style="height: 100%; width: 100%; max-width: 300px; max-height: 300px; object-fit: cover;" [src]="getImagePath(e.imagen)"></ion-img> <!-- Cambia 'i.imagen' a 'e.imagen' -->
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Quieres hablar con soporte?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="text-align: center;">
+      <ion-button (click)="contactar()" style="color: white;">Contactar soporte</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
-
