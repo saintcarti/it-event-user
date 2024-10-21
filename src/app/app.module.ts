@@ -4,10 +4,10 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
-import { InicioPage } from './pages/auth/inicio/inicio.page'; // Asegúrate de importar el componente
+import { provideHttpClient } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -20,10 +20,9 @@ import { InicioPage } from './pages/auth/inicio/inicio.page'; // Asegúrate de i
     ReactiveFormsModule,
     FormsModule,
     QRCodeModule,
-    HttpClientModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },provideHttpClient(),AuthService
   ],
   bootstrap: [AppComponent],
 })

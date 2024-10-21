@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="regresar()">
+        <ion-icon slot="start" ></ion-icon>
+        Regresar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalle de evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-size: 20px; color: white;">{{evento.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="getImagePath(evento.imagen)"></ion-img>
+      <br>
+      <p style="color: white;">Descripcion:  {{evento.descripcion}}</p>
+      <p style="color: white;">Fecha:  {{evento.fecha}}</p>
+      <p style="color: white;">Lugar:  {{evento.lugar}}</p>
+    </ion-card-content>
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

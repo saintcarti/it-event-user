@@ -35,7 +35,9 @@ export class InicioPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   login() {
     if (!this.loginForm.valid) {

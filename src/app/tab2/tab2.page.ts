@@ -1,41 +1,37 @@
-import { Component } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { ApiEventosService } from '../services/api-eventos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
+  
+  eventos :any[]=[]
 
-  fechaSeleccionada: string | null = null;
-  mostrarCalendario: boolean = false;
+  constructor(private apiuser:ApiEventosService,
+    private router:Router){}
 
-  constructor(private alertController: AlertController, private navCtrl: NavController) {}
-
-  abrirCalendario() {
-    this.mostrarCalendario = true;
+  ngOnInit(){
+    this.Eventos();
   }
 
-  cerrarCalendario() {
-    this.mostrarCalendario = false;
+  Eventos(){
+    this.apiuser.getEvents().subscribe(datos=> 
+      this.eventos = datos,
+    )
   }
 
-  async agendarEvento() {
-    const alert = await this.alertController.create({
-      header: 'Éxito',
-      message: 'Se ha agendado el evento con éxito.',
-      buttons: [
-        {
-          text: 'OK',
-          handler: () => {
-            
-            this.navCtrl.navigateForward('/tabs/tab4');
-          }
-        }
-      ]
-    });
-
-    await alert.present();
+  buscarEvento(Observable:any){
+    this.router.navigate(['/detalle'],
+      {queryParams:{event:JSON.stringify(Observable)}})
   }
+
+  getImagePath(imagen: string): string {
+    return `assets/Imagenes/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
+  }
+  
+
 }

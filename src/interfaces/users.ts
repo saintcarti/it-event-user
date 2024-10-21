@@ -11,5 +11,6 @@ export interface UserNuevo{
     email:string;
     password:string;
     imagen:string;
+    rut:string;
     isActive: boolean;
 }
