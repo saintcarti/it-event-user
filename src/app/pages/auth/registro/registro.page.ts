@@ -17,6 +17,7 @@ export class RegistroPage implements OnInit {
     email:"",
     password:"",
     imagen:"",
+    rut:"",
     isActive:false
   }
 
@@ -31,7 +32,8 @@ export class RegistroPage implements OnInit {
     this.registroForm = this.fbuilder.group({
       'nombre': new FormControl("",[Validators.required, Validators.minLength(3)]),
       'email' : new FormControl("",[Validators.required, Validators.email]),
-      'password':new FormControl("",[Validators.required,Validators.minLength(8)])
+      'password':new FormControl("",[Validators.required,Validators.minLength(8)]),
+      'rut': new FormControl("",[Validators.required,Validators.minLength(10)]),
     })
   }
 
@@ -50,6 +52,7 @@ export class RegistroPage implements OnInit {
           this.nuevoUsuario.nombre = this.registroForm.value.nombre;
           this.nuevoUsuario.email = this.registroForm.value.email;
           this.nuevoUsuario.password = this.registroForm.value.password;
+          this.nuevoUsuario.rut = this.registroForm.value.rut;
           this.nuevoUsuario.isActive = true;
           this.auth.PostUsuario(this.nuevoUsuario).subscribe();
           this.registroForm.reset();
