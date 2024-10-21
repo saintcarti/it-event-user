@@ -15,8 +15,10 @@ export class InicioPage implements OnInit {
 
   usuario = {
     id: 0,
+    nombre: "",
     email: "",
     password: "",
+    rut: "",
     isActive: false
   };
 
@@ -57,8 +59,10 @@ export class InicioPage implements OnInit {
 
       this.usuario = {
         id: this.userdata[0].id,
+        nombre: this.userdata[0].nombre,
         email: this.userdata[0].email,
         password: this.userdata[0].password,
+        rut: this.userdata[0].rut,
         isActive: this.userdata[0].isActive,
       };
 
@@ -79,10 +83,12 @@ export class InicioPage implements OnInit {
   }
 
   private iniciarSesion(usuario: any) {
-    sessionStorage.setItem('email', usuario.email);
-    sessionStorage.setItem('password', usuario.password);
+    sessionStorage.setItem('nombre',this.usuario.nombre);
+    sessionStorage.setItem('email', this.usuario.email);
+    sessionStorage.setItem('password', this.usuario.password);
+    sessionStorage.setItem('rut', this.usuario.rut);
     sessionStorage.setItem('ingresado', 'true');
-    this.showToast('Sesión iniciada: ' + usuario.email);
+    this.showToast('Sesión iniciada: ' + this.usuario.email);
     this.router.navigate(['/tabs/tab1']);
   }
 

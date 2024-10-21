@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button (click)="regresar()">
-        <ion-icon slot="start" ></ion-icon>
+        <ion-icon slot="start"></ion-icon>
         Regresar
       </ion-button>
     </ion-buttons>
@@ -19,17 +19,26 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title style="font-size: 20px; color: white;">{{evento.nombre}}</ion-card-title>
+      <ion-card-title style="font-size: 20px; color: white;">{{ evento.nombre }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-img [src]="getImagePath(evento.imagen)"></ion-img>
       <br>
-      <p style="color: white;">Descripcion:  {{evento.descripcion}}</p>
-      <p style="color: white;">Fecha:  {{evento.fecha}}</p>
-      <p style="color: white;">Lugar:  {{evento.lugar}}</p>
+      <p style="color: white;">Descripción: {{ evento.descripcion }}</p>
+      <p style="color: white;">Fecha: {{ evento.fecha }}</p>
+      <p style="color: white;">Lugar: {{ evento.lugar }}</p>
     </ion-card-content>
-    <ion-card-content>
-      
+    
+    <ion-card-content style="text-align: center;">
+      <ion-button (click)="generarQr()" shape="round" color="success">
+        <span style="color: white;">Generar QR</span>
+      </ion-button>
+  
+      <ion-card class="ion-text-center">
+        <ion-card-content style="text-align: center;">
+          <qrcode *ngIf="qrdata" [qrdata]="qrdata" [width]="230" [errorCorrectionLevel]="'M'" [allowEmptyString]="true"></qrcode>
+        </ion-card-content>
+      </ion-card>
     </ion-card-content>
   </ion-card>
 </ion-content>

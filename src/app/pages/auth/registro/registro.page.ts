@@ -33,7 +33,7 @@ export class RegistroPage implements OnInit {
       'nombre': new FormControl("",[Validators.required, Validators.minLength(3)]),
       'email' : new FormControl("",[Validators.required, Validators.email]),
       'password':new FormControl("",[Validators.required,Validators.minLength(8)]),
-      'rut': new FormControl("",[Validators.required,Validators.minLength(10)]),
+      'rut': new FormControl("", [Validators.required, Validators.minLength(10)]),
     })
   }
 

@@ -7,23 +7,36 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage implements OnInit {
+  evento: any;
+  qrdata: string = '';
+  nombre: string | null;
+  rut: string | null;
 
-  evento :any;
-  constructor(private activated:ActivatedRoute,
-    private router:Router) {
-      this.activated.queryParams.subscribe(params=>{
-        this.evento = JSON.parse(params['event'])
-      })
-     }
+  constructor(private activated: ActivatedRoute, private router: Router) {
+    this.activated.queryParams.subscribe(params => {
+      this.evento = JSON.parse(params['event']);
+    });
 
-  ngOnInit() {
+    this.nombre = sessionStorage.getItem('nombre');
+    this.rut = sessionStorage.getItem('rut');
   }
 
-  regresar(){
+  ngOnInit() {
+    
+  }
+  
+
+  regresar() {
     this.router.navigate(['/tabs/tab2']);
+    this.qrdata = '';
   }
 
   getImagePath(imagen: string): string {
-    return `assets/Imagenes/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
+    return `assets/Imagenes/${imagen}`;
+  }
+
+  generarQr() {
+    this.qrdata = `${this.evento.nombre} - ${this.evento.fecha} - ${this.evento.lugar} - ${this.nombre} - ${this.rut}`;
+    console.log(this.qrdata);
   }
 }

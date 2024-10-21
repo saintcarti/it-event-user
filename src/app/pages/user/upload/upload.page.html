@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir Archivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <input type="file" (change)="onFileSelected($event)" />
+  <ion-button (click)="uploadFile()">Subir Archivo</ion-button>
+</ion-content>

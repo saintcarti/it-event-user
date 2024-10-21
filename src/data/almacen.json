@@ -144,6 +144,15 @@
       "rut": "12345678-9",
       "imagen": "",
       "isActive": true
+    },
+    {
+      "id": "f58f",
+      "nombre": "mateo",
+      "email": "mateo@gmail.com",
+      "password": "Mateo1005#",
+      "imagen": "",
+      "rut": "21325774-9",
+      "isActive": true
     }
   ]
 }

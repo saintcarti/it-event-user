@@ -32,13 +32,14 @@
       <div *ngIf="registroForm.get('password')?.hasError('required')">*La contraseña es obligatoria</div>
       <div *ngIf="registroForm.get('password')?.hasError('pattern')">*La contraseña debe tener mínimo 8 caracteres, una letra y un número</div>
     </div>
+
+    <ion-item>
+      <ion-input type="text" placeholder="RUT" formControlName="rut" label="RUT: " labelPlacement="floating"></ion-input>
+    </ion-item>
+
     <div id="alerta" *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty || registroForm.get('rut')?.touched)">
-      <div *ngIf="registroForm.get('rut')?.hasError('required')">
-        *Rut es obligatorio
-      </div>
-      <div *ngIf="registroForm.get('rut')?.hasError('minlength')">
-        *Rut debe tener mínimo 10 caracteres incluyendo guión
-      </div>
+      <div *ngIf="registroForm.get('rut')?.hasError('required')">*RUT es obligatorio</div>
+      <div *ngIf="registroForm.get('rut')?.hasError('minlength')">*RUT debe tener mínimo 10 caracteres incluyendo guión</div>
     </div>
 
     <div class="button-container">
@@ -49,5 +50,3 @@
     </div>
   </form>
 </ion-content>
-
-

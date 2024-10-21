@@ -33,9 +33,17 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./pages/user/perfil/perfil.module').then( m => m.PerfilPageModule),
     canActivate:[AutorizadoGuard]
-  },  {
+  },
+  {
     path: 'detalle',
-    loadChildren: () => import('./pages/eventos/detalle/detalle.module').then( m => m.DetallePageModule)
+    loadChildren: () => import('./pages/eventos/detalle/detalle.module').then( m => m.DetallePageModule),
+    canActivate:[AutorizadoGuard]
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./pages/user/upload/upload.module').then( m => m.UploadPageModule),
+    canActivate:[AutorizadoGuard]
+  
   }
 
 ];
