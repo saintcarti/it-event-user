@@ -2,7 +2,7 @@
   "events": [
     {
       "id": "1",
-      "imagen": "/img/Taller1.png",
+      "imagen": "Taller1.png",
       "nombre": "Taller de Desarrollo Web con JavaScript",
       "fecha": "2024-11-05",
       "lugar": "Centro de Capacitación TechHub",
@@ -10,7 +10,7 @@
     },
     {
       "id": "2",
-      "imagen": "https://example.com/event2.jpg",
+      "imagen": "Taller2.png",
       "nombre": "Curso Intensivo de Ciberseguridad",
       "fecha": "2024-12-15",
       "lugar": "Universidad Tecnológica",
@@ -18,7 +18,7 @@
     },
     {
       "id": "3",
-      "imagen": "https://example.com/event3.jpg",
+      "imagen": "Taller3.png",
       "nombre": "Conferencia Internacional de Inteligencia Artificial",
       "fecha": "2024-12-01",
       "lugar": "Centro de Convenciones Digital",
@@ -26,7 +26,7 @@
     },
     {
       "id": "4",
-      "imagen": "https://example.com/event4.jpg",
+      "imagen": "taller4.png",
       "nombre": "Workshop de DevOps y Automatización",
       "fecha": "2024-10-22",
       "lugar": "Laboratorio TechZone",
@@ -34,7 +34,7 @@
     },
     {
       "id": "5",
-      "imagen": "https://example.com/event5.jpg",
+      "imagen": "taller5.jpg",
       "nombre": "Hackathon de Ciberseguridad",
       "fecha": "2024-11-20",
       "lugar": "Oficinas CyberSafe",
@@ -42,7 +42,7 @@
     },
     {
       "id": "6",
-      "imagen": "https://example.com/event6.jpg",
+      "imagen": "taller6.jpg",
       "nombre": "Curso de Programación en Python para Ciencia de Datos",
       "fecha": "2024-11-10",
       "lugar": "Academia Online DataMasters",
@@ -50,7 +50,7 @@
     },
     {
       "id": "7",
-      "imagen": "https://example.com/event7.jpg",
+      "imagen": "taller7.jpg",
       "nombre": "Seminario sobre Blockchain y Criptomonedas",
       "fecha": "2024-12-05",
       "lugar": "Auditorio Blockchain Innovators",
@@ -58,7 +58,7 @@
     },
     {
       "id": "8",
-      "imagen": "https://example.com/event8.jpg",
+      "imagen": "taller8.jpg",
       "nombre": "Taller de Desarrollo de Aplicaciones Móviles con Flutter",
       "fecha": "2024-10-28",
       "lugar": "Campus Tecnológico Creativa",
@@ -66,7 +66,7 @@
     },
     {
       "id": "9",
-      "imagen": "https://example.com/event9.jpg",
+      "imagen": "taller9.jpg",
       "nombre": "Seminario de Seguridad en la Nube",
       "fecha": "2024-11-25",
       "lugar": "Centro de Convenciones CloudSec",
@@ -74,7 +74,7 @@
     },
     {
       "id": "10",
-      "imagen": "https://example.com/event10.jpg",
+      "imagen": "taller10.png",
       "nombre": "Jornada de Desarrollo de Videojuegos con Unity",
       "fecha": "2024-10-30",
       "lugar": "Academia Creativa",

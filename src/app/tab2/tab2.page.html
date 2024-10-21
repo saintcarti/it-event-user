@@ -1,11 +1,24 @@
 <ion-header color="white" [translucent]="true">
   <ion-toolbar mode="ios">
-    <ion-title>
-    </ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="white" [fullscreen]="true" class="ion-padding">
- 
-    
+  <ion-list>
+    <ion-item *ngFor="let e of eventos" (click)="buscarEvento(e)">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; color: white;">{{e.nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-img [src]="getImagePath(e.imagen)"></ion-img>
+          <br>
+          <p style="color: white;">Descripcion:  {{e.descripcion}}</p>
+          <p style="color: white;">Fecha:  {{e.fecha}}</p>
+          <p style="color: white;">Lugar:  {{e.lugar}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
