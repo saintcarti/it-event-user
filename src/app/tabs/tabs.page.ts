@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AutorizadoGuard } from '../guards/autorizado.guard';
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private autorizado:AutorizadoGuard) {}
 
 }

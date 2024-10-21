@@ -9,8 +9,17 @@ import { ToastController, AlertController } from '@ionic/angular';
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage {
+export class InicioPage implements OnInit {
+  
   userdata: any;
+
+  usuario = {
+    id: 0,
+    email: "",
+    password: "",
+    isActive: false
+  };
+
   loginForm: FormGroup;
 
   constructor(
@@ -22,7 +31,7 @@ export class InicioPage {
   ) {
     this.loginForm = this.builder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(6)]], // Cambiado a 6 para el mensaje
     });
   }
 
@@ -32,29 +41,38 @@ export class InicioPage {
     if (!this.loginForm.valid) {
       return;
     }
+    
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
     this.authservice.GetUserByCorreo(email).subscribe(resp => {
-      const userdata = resp;
-      // Verifica si userdata es un array
-      if (!Array.isArray(userdata) || userdata.length === 0) {
+      this.userdata = resp;
+      if (this.userdata.length === 0) {
         this.loginForm.reset();
         this.EmailNoExiste();
         return;
       }
-      const usuario = userdata[0];
-      if (usuario.password !== password) {
+
+      this.usuario = {
+        id: this.userdata[0].id,
+        email: this.userdata[0].email,
+        password: this.userdata[0].password,
+        isActive: this.userdata[0].isActive,
+      };
+
+      if (this.usuario.password !== password) {
         this.loginForm.reset();
         this.ErrorUsuario();
         return;
       }
-      if (usuario.isActive) {
+
+      if (!this.usuario.isActive) {
         this.loginForm.reset();
         this.UsuarioInactivo();
         return;
       }
-      this.iniciarSesion(usuario);
+
+      this.iniciarSesion(this.usuario);
     });
   }
 
@@ -63,7 +81,7 @@ export class InicioPage {
     sessionStorage.setItem('password', usuario.password);
     sessionStorage.setItem('ingresado', 'true');
     this.showToast('Sesión iniciada: ' + usuario.email);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/tabs/tab1']);
   }
 
   async showToast(msg: string) {

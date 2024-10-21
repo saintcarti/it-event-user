@@ -1,17 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+
+
+<ion-header color="white" [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title>Generador de QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+<ion-content color="white" [fullscreen]="true" class="content-background">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Escanea el QR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="qr-container">
+        <img src="assets/Imagenes/qr-code.png" alt="Código QR" class="qr-image">
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+
+
+

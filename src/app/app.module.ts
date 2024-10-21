@@ -7,14 +7,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
-
-// Firebase imports
-import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { InicioPage } from './pages/auth/inicio/inicio.page'; // Asegúrate de importar el componente
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -22,9 +20,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     ReactiveFormsModule,
     FormsModule,
     QRCodeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    HttpClientModule // Asegúrate de importar HttpClientModule
+    HttpClientModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

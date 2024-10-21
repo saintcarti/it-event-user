@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   {
@@ -24,16 +25,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/auth/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
-  },
-  {
     path: 'editar',
-    loadChildren: () => import('./pages/user/editar/editar.module').then(m => m.EditarModule) // Asegúrate de que el nombre del módulo sea correcto
+    loadChildren: () => import('./pages/user/editar/editar.module').then(m => m.EditarModule),
+    canActivate:[AutorizadoGuard]
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/user/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/user/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate:[AutorizadoGuard]
   }
 ];
 @NgModule({
