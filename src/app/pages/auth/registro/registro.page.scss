@@ -1,10 +1,9 @@
-.registro-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar horizontalmente */
-    justify-content: center; /* Centrar verticalmente */
-    height: 100%; /* Asegurarte de que ocupe toda la altura disponible */
-  }
+.registroForm{
+  display: grid;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+}
   
   ion-item {
     width: 100%; /* Asegurarte de que el input ocupe todo el ancho disponible */
@@ -22,11 +21,7 @@
     margin-top: 30px; /* Separar los botones del resto del contenido */
   }
   
-  ion-button {
-    border-radius: 20px; /* Bordes redondeados */
-    --background: var(--ion-color-primary); /* Color de fondo del botón */
-    --color: white; /* Color del texto del botón */
-  }
+  
   
   p {
     margin-top: 10px; /* Separar el texto del botón */

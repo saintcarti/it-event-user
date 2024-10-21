@@ -6,8 +6,8 @@
 
 <ion-content [fullscreen]="true" class="ion-text-center">
   <form [formGroup]="loginForm" class="centered-form">
-    <ion-item>
-      <ion-input type="email" placeholder="Ingrese correo electronico..." label="Correo" labelPlacement="floating"
+    <ion-item style="border-radius: 15px;">
+      <ion-input type="email" placeholder="Ingrese correo electronico..."  label="Correo" labelPlacement="floating"
         formControlName="email">
       </ion-input>
     </ion-item>
@@ -19,7 +19,7 @@
       *Correo invalido
     </div>
 
-    <ion-item>
+    <ion-item style="border-radius: 15px;">
       <ion-input type="password" placeholder="Ingrese su contraseña..." label="Contraseña: " labelPlacement="floating"
         formControlName="password"></ion-input>
     </ion-item>
@@ -33,7 +33,7 @@
 
     <div>
       <ion-button (click)="login()" expand="block" fill="solid" shape="round" color="primary" [disabled]="loginForm.invalid">
-        Entrar
+        <a style="color: white;">Entrar</a>
       </ion-button>
     </div>
 

@@ -87,4 +87,8 @@ export class RegistroPage implements OnInit {
     await alerta.present();
   }
 
+  inicio(){
+    this.router.navigate(['/inicio']);
+  }
+
 }

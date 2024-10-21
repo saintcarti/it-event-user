@@ -8,8 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
 import { provideHttpClient } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-import { File } from '@ionic-native/file/ngx';
-import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 
 @NgModule({
   declarations: [
@@ -22,8 +20,7 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     ReactiveFormsModule,
     FormsModule,
     QRCodeModule,
-    File,
-    FileTransfer,
+ 
     
   ],
   providers: [
