@@ -129,6 +129,14 @@
       "password": "nico1234",
       "imagen": "",
       "isActive": true
+    },
+    {
+      "id": "7101",
+      "nombre": "juako",
+      "email": "juako@gmail.com",
+      "password": "juako1234",
+      "imagen": "",
+      "isActive": true
     }
   ]
 }
