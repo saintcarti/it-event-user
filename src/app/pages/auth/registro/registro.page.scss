@@ -1,0 +1,36 @@
+.registro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    height: 100%; /* Asegurarte de que ocupe toda la altura disponible */
+  }
+  
+  ion-item {
+    width: 100%; /* Asegurarte de que el input ocupe todo el ancho disponible */
+  }
+  
+  #alerta {
+    color: red; /* Cambiar el color de las alertas a rojo */
+    text-align: center; /* Centrar el texto de las alertas */
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido */
+    margin-top: 30px; /* Separar los botones del resto del contenido */
+  }
+  
+  ion-button {
+    border-radius: 20px; /* Bordes redondeados */
+    --background: var(--ion-color-primary); /* Color de fondo del botón */
+    --color: white; /* Color del texto del botón */
+  }
+  
+  p {
+    margin-top: 10px; /* Separar el texto del botón */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  
