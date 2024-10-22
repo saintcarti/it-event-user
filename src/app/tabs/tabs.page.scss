@@ -1,1 +1,36 @@
-
+menu {
+    background-color: #1b1b1b; /* Fondo oscuro del menú */
+  }
+  
+  .menu-item {
+    color: white; /* Texto blanco para mayor contraste */
+    --background: transparent; /* Fondo transparente para los items */
+    --border-radius: 10px; /* Bordes redondeados */
+    transition: background 0.3s ease;
+  
+    &:hover {
+      --background: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el ratón */
+    }
+  }
+  
+  ion-toolbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para el toolbar */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Línea inferior para separación */
+  }
+  
+  ion-tabs {
+    background-color: #1b1b1b; /* Fondo de las pestañas */
+  }
+  
+  ion-tab-bar {
+    background-color: #1b1b1b; /* Fondo de la barra de pestañas */
+    
+    ion-tab-button {
+      color: white; /* Color de texto blanco para los botones de las pestañas */
+      
+      &:hover {
+        color: #ffcc00; /* Color de texto al pasar el ratón */
+      }
+    }
+  }
+  

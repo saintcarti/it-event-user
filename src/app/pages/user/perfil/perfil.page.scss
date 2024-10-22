@@ -41,8 +41,19 @@ ion-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  display: flex; 
+  flex-direction: column;
+  margin-top: 20px; 
 }
 
 .button-group ion-button {
   border-radius: 20px; 
+}
+
+.small-button {
+  --min-width: 80px; 
+  --padding-start: 10px; 
+  --padding-end: 10px;
+  height: 36px; 
+  font-size: 14px; 
 }
