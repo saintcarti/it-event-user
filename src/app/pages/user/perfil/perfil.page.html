@@ -1,16 +1,15 @@
 <ion-header color="white" [translucent]="true">
-
   <ion-toolbar mode="ios">
-  <ion-buttons slot="start">
-    <ion-button (click)="goBack()">
-      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-    </ion-button>
-  </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="white"[fullscreen]="true">
+<ion-content color="white" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Mi Perfil</ion-title>
@@ -47,11 +46,9 @@
       </ion-list>
 
       <div class="button-group">
-        <ion-button expand="block" color="primary" button href="/editar">Editar Perfil</ion-button>
-        <ion-button expand="block" color="primary" button href="">Cerrar Sesión</ion-button>
+        <ion-button class="small-button" color="primary" href="/editar">Editar Perfil</ion-button>
+        <ion-button class="small-button" color="primary" href="">Cerrar Sesión</ion-button>
       </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
-
-

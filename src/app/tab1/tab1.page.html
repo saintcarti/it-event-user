@@ -1,30 +1,37 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Home</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title style="font-weight: 600; text-align: center; font-size: 22px; color: #ffffff;">Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
 
-  <h2 style="text-align: center;">Eventos proximos</h2>
+<ion-content style="background-color: #121212; padding: 10px;">
+  
+  <h2 style="text-align: center; font-size: 24px; color: #ffffff; margin-top: 20px; margin-bottom: 30px;">Próximos Eventos</h2>
+
+ 
   <swiper-container
     (slideChange)="swiperSlideChanged($event)"
     [loop]="true"
-    [pagination]="true">
+    [pagination]="true"
+    style="padding-bottom: 30px;">
+    
     <swiper-slide *ngFor="let e of eventos">
-      
-      <h2 style="text-align: center;">{{e.nombre}}</h2>
-      <div style="align-items: center;">
-        <ion-img style="height: 100%; width: 100%; max-width: 300px; max-height: 300px; object-fit: cover;" [src]="getImagePath(e.imagen)"></ion-img> <!-- Cambia 'i.imagen' a 'e.imagen' -->
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px; background-color: #1F1F1F; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+        <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">{{e.nombre}}</h3>
+        <img class="evento-img" [src]="getImagePath(e.imagen)" alt="Imagen del evento">
       </div>
     </swiper-slide>
   </swiper-container>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Quieres hablar con soporte?</ion-card-title>
+  
+  <ion-card style="background-color: #1F1F1F; border-radius: 15px; margin: 30px auto; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+    <ion-card-header style="text-align: center; padding: 15px;">
+      <ion-card-title style="font-size: 20px; color: #ffffff;">¿Necesitas ayuda?</ion-card-title>
     </ion-card-header>
     <ion-card-content style="text-align: center;">
-      <ion-button (click)="contactar()" style="color: white;">Contactar soporte</ion-button>
+      <ion-button (click)="contactar()" class="boton-contacto" expand="block">
+        Contactar Soporte
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
