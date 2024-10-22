@@ -12,6 +12,8 @@ export class TabsPage {
     private router:Router,)  {}
 
   logout(){
+    sessionStorage.removeItem('rut');
+    sessionStorage.removeItem('nombre');
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('password');
     sessionStorage.removeItem('ingresado');

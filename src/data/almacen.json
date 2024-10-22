@@ -153,6 +153,24 @@
       "imagen": "",
       "rut": "21325774-9",
       "isActive": true
+    },
+    {
+      "id": "9f90",
+      "nombre": "Juaquin",
+      "email": "juaquin@gmail.com",
+      "password": "Mateo1005",
+      "imagen": "",
+      "rut": "21325774-9",
+      "isActive": true
+    },
+    {
+      "id": "aae6",
+      "nombre": "juaco",
+      "email": "kako@gmail.com",
+      "password": "Mate1005#",
+      "imagen": "",
+      "rut": "21325774-9",
+      "isActive": true
     }
   ]
 }
