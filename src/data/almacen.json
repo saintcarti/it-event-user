@@ -171,6 +171,15 @@
       "imagen": "",
       "rut": "21325774-9",
       "isActive": true
+    },
+    {
+      "id": "7e10",
+      "nombre": "benjamin",
+      "email": "benjamin@gmail.com",
+      "password": "Mateo1005",
+      "imagen": "",
+      "rut": "21326774-9",
+      "isActive": true
     }
   ]
 }

@@ -38,14 +38,7 @@ const routes: Routes = [
     path: 'detalle',
     loadChildren: () => import('./pages/eventos/detalle/detalle.module').then( m => m.DetallePageModule),
     canActivate:[AutorizadoGuard]
-  },
-  {
-    path: 'upload',
-    loadChildren: () => import('./pages/user/upload/upload.module').then( m => m.UploadPageModule),
-    canActivate:[AutorizadoGuard]
-  
   }
-
 ];
 @NgModule({
   imports: [
