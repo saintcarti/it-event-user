@@ -54,7 +54,6 @@ export class Tab1Page implements OnInit {
       this.quejasservice.postQueja(this.nuevaQueja).subscribe();
       this.quejasForm.reset();
       this.mostrarMensaje();
-      this.rou
     }else{
       this.errorMensaje();
       this.quejasForm.reset();
