@@ -182,14 +182,42 @@
       "isActive": true
     }
   ],
-  "Quejas":[
+  "Quejas": [
     {
       "id": "1",
       "nombre": "",
       "email": "",
-      "rut": "",
       "queja": ""
+    },
+    {
+      "id": "9e6d",
+      "nombre": "xavier",
+      "email": "xavirc03@gmail.com",
+      "queja": "Me gusta mucho la aplicacion"
+    },
+    {
+      "id": "cc1c",
+      "nombre": "xavier",
+      "email": "xavirc03@gmail.com",
+      "queja": "Cacha juacooo"
+    },
+    {
+      "id": "14e7",
+      "nombre": "xavier",
+      "email": "xavirc03@gmail.com",
+      "queja": "Cachajuakooo"
+    },
+    {
+      "id": "6af7",
+      "nombre": "xaaxas",
+      "email": "xasd@asdas.cl",
+      "queja": "sadlaskjdsljkasdjkl"
+    },
+    {
+      "id": "952d",
+      "nombre": "xavier",
+      "email": "xavirc03@gmail.com",
+      "queja": "aldksfjlkdjfkdfj"
     }
   ]
-  
 }

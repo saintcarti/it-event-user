@@ -8,6 +8,5 @@ export interface Quejas{
 export interface QuejasNuevas{
     nombre:string,
     email: string,
-    rut: string,
     queja: string
 }

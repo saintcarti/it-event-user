@@ -27,12 +27,42 @@
   
   <ion-card style="background-color: #1F1F1F; border-radius: 15px; margin: 30px auto; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
     <ion-card-header style="text-align: center; padding: 15px;">
-      <ion-card-title style="font-size: 20px; color: #ffffff;">¿Necesitas ayuda?</ion-card-title>
+      <ion-card-title style="font-size: 20px; color: #ffffff;">Deja tu comentario o queja sobre nuestra app</ion-card-title>
     </ion-card-header>
     <ion-card-content style="text-align: center;">
-      <ion-button (click)="contactar()" class="boton-contacto" expand="block">
-        Contactar Soporte
-      </ion-button>
+      <form [formGroup]="quejasForm">
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre..." formControlName="nombre" label="Nombre:" labelPlacement="floating"></ion-input>
+        </ion-item>
+
+        <div id="alerta" *ngIf="quejasForm.get('nombre')?.invalid && (quejasForm.get('nombre')?.dirty || quejasForm.get('nombre')?.touched)">
+          <div *ngIf="quejasForm.get('nombre')?.hasError('required')">*Nombre es obligatorio</div>
+          <div *ngIf="quejasForm.get('nombre')?.hasError('minlength')">*Nombre debe tener mínimo 3 caracteres</div>
+        </div>
+
+        <ion-item>
+          <ion-input type="text" placeholder="email" formControlName="email" label="Email: " labelPlacement="floating"></ion-input>
+        </ion-item>
+
+        <div id="alerta" *ngIf="quejasForm.get('email')?.invalid && (quejasForm.get('email')?.dirty || quejasForm.get('email')?.touched)">
+          <div *ngIf="quejasForm.get('email')?.hasError('required')">*email es obligatorio</div>
+          <div *ngIf="quejasForm.get('email')?.hasError('email')">*debe estar en formato de email</div>
+        </div>
+
+        <ion-item>
+          <ion-textarea placeholder="Escribe tu comentario o queja..." formControlName="queja" label="Comentario:" labelPlacement="floating"></ion-textarea>
+        </ion-item>
+
+        <div id="alerta" *ngIf="quejasForm.get('queja')?.invalid && (quejasForm.get('queja')?.dirty || quejasForm.get('queja')?.touched)">
+          <div *ngIf="quejasForm.get('queja')?.hasError('required')">*Comentario es obligatorio</div>
+          <div *ngIf="quejasForm.get('queja')?.hasError('minlength')">*Comentario debe tener mínimo 10 caracteres</div>
+          <div *ngIf="quejasForm.get('queja')?.hasError('maxlength')">*Comentario debe tener como maximo 200 caracteres</div>
+        </div>
+
+        <ion-button expand="block" color="dark" (click)="Postquejas()" style="margin-top: 20px;">Enviar</ion-button>
+
+
+      </form>
     </ion-card-content>
   </ion-card>
 </ion-content>

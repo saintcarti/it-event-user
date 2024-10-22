@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="comentarios.length > 0; else noComentarios">
+    <ion-item *ngFor="let comentari of comentarios">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Nombre: {{comentari.nombre}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Email: {{comentari.email}}</p>
+          <p>Comentario o queja: {{comentari.queja}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  
+  <ng-template #noComentarios>
+    <ion-card>
+      <ion-card-content>No hay comentarios disponibles.</ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <ion-alert *ngIf="errorMessage" [header]="'Error'" [message]="errorMessage"  ></ion-alert>
+</ion-content>
