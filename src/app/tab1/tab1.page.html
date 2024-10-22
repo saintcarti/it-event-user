@@ -8,6 +8,7 @@
   <h2 style="text-align: center;">Eventos proximos</h2>
   <swiper-container
     (slideChange)="swiperSlideChanged($event)"
+    [autoplay]="{ delay: 3000 }"
     [loop]="true"
     [pagination]="true">
     <swiper-slide *ngFor="let e of eventos">
@@ -23,8 +24,10 @@
     <ion-card-header>
       <ion-card-title>Quieres hablar con soporte?</ion-card-title>
     </ion-card-header>
-    <ion-card-content style="text-align: center;">
-      <ion-button (click)="contactar()" style="color: white;">Contactar soporte</ion-button>
+    <ion-card-content>
+      <form action="">
+        
+      </form>
     </ion-card-content>
   </ion-card>
 </ion-content>

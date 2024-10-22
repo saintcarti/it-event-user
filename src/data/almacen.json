@@ -181,5 +181,15 @@
       "rut": "21326774-9",
       "isActive": true
     }
+  ],
+  "Quejas":[
+    {
+      "id": "1",
+      "nombre": "",
+      "email": "",
+      "rut": "",
+      "queja": ""
+    }
   ]
+  
 }

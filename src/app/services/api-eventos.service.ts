@@ -15,4 +15,6 @@ export class ApiEventosService {
   getEvents():Observable<any>{
     return this.httpclient.get<any>(this.url+'/events');
   }
+
+  
 }

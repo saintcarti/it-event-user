@@ -9,6 +9,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { provideHttpClient } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
