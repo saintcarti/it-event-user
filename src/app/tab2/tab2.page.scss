@@ -41,16 +41,16 @@ ion-datetime {
   background: #EEE;
 }
 
-/* Estilo adicional para las imágenes */
+
 ion-img {
   width: 100%;
   height: auto;
-  border-radius: 15px; /* Bordes redondeados */
+  border-radius: 15px; 
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ion-img:hover {
-  transform: scale(1.05); /* Efecto de agrandamiento */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra en hover */
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

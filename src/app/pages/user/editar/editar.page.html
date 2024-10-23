@@ -9,33 +9,34 @@
 </ion-header>
 
 <ion-content color="white" [fullscreen]="true">
-  <form>
-    <ion-item>
-      <ion-input 
-        type="text" 
-        placeholder="Nombre..." 
-        label="Nombre:" 
-        labelPlacement="floating" 
-        [(ngModel)]="user.nombre" 
-        name="nombre"
-        [ngClass]="{'input-error': !user.nombre }">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input 
-        type="text" 
-        placeholder="Correo..." 
-        label="Correo:" 
-        labelPlacement="floating" 
-        [(ngModel)]="user.email" 
-        name="email"
-        [ngClass]="{'input-error': !user.email}">
-      </ion-input>
-    </ion-item>
-    
+  <ion-card>
+    <form>
+      <ion-item>
+        <ion-input 
+          type="text" 
+          placeholder="Nombre..." 
+          label="Nombre:" 
+          labelPlacement="floating" 
+          [(ngModel)]="user.nombre" 
+          name="nombre"
+          [ngClass]="{'input-error': !user.nombre }">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input 
+          type="text" 
+          placeholder="Correo..." 
+          label="Correo:" 
+          labelPlacement="floating" 
+          [(ngModel)]="user.email" 
+          name="email"
+          [ngClass]="{'input-error': !user.email}">
+        </ion-input>
+      </ion-item>
 
-    <ion-button (click)="updateUsuario()" expand="block" fill="clear" shape="round">
-      Actualizar información
-    </ion-button>
-  </form>
+      <ion-button (click)="updateUsuario()" expand="block" fill="clear" shape="round">
+        Actualizar información
+      </ion-button>
+    </form>
+  </ion-card>
 </ion-content>

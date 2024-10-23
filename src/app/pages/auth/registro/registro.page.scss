@@ -6,26 +6,26 @@
 }
   
   ion-item {
-    width: 100%; /* Asegurarte de que el input ocupe todo el ancho disponible */
+    width: 100%; 
   }
   
   #alerta {
-    color: red; /* Cambiar el color de las alertas a rojo */
-    text-align: center; /* Centrar el texto de las alertas */
+    color: red; 
+    text-align: center; 
   }
   
   .button-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar el contenido */
-    margin-top: 30px; /* Separar los botones del resto del contenido */
+    align-items: center; 
+    margin-top: 30px; 
   }
   
   
   
   p {
-    margin-top: 10px; /* Separar el texto del botón */
-    text-align: center; /* Centrar el texto */
+    margin-top: 10px; 
+    text-align: center; 
   }
   
   
