@@ -1,8 +1,8 @@
-<ion-header color="white" [translucent]="true">
+<ion-header color="white" [translucent]="true"> 
   <ion-toolbar mode="ios">
     <ion-buttons slot="start">
       <ion-button (click)="goBack()">
-        <ion-icon slot="icon-only"  name="arrow-back"></ion-icon>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Editar Perfil</ion-title>
@@ -12,6 +12,17 @@
 <ion-content color="white" [fullscreen]="true">
   <ion-card>
     <form>
+      <ion-card>
+        
+        <img [src]="user.imagen || 'assets/default-avatar.png'" alt="Foto de perfil" style="width: 100%; height: auto; border-radius: 50%;">
+        <ion-card-title>{{ user.nombre }}</ion-card-title>
+        
+        
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" style="display: none;" #fileInput>
+        <ion-button (click)="fileInput.click()" fill="outline" shape="round">Cambiar Foto</ion-button>
+      </ion-card>
+
+      
       <ion-item>
         <ion-input 
           type="text" 
@@ -35,6 +46,7 @@
         </ion-input>
       </ion-item>
 
+      
       <ion-button (click)="updateUsuario()" expand="block" fill="clear" shape="round">
         Actualizar información
       </ion-button>

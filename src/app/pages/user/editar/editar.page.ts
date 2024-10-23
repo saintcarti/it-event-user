@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
@@ -18,16 +18,17 @@ export class EditarPage implements OnInit {
     email: "",
     password: "",
     rut: "",
-    imagen: "",
+    imagen: "",  
     isActive: true
   };
-
+  
   constructor(
     private navCtrl: NavController,
     private alertController: AlertController,
     private router: Router,
     private auth: AuthService
   ) {
+    // Código para cargar el usuario desde sessionStorage
     const email = sessionStorage.getItem('email');
 
     if (!email) {
@@ -53,8 +54,21 @@ export class EditarPage implements OnInit {
     );
   }
 
-  ngOnInit() {
-    
+  ngOnInit() {}
+  
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = () => {
+        this.user.imagen = reader.result as string; 
+        sessionStorage.setItem('fotoPerfil', this.user.imagen);
+      };
+      
+      reader.readAsDataURL(file);
+    }
   }
 
   updateUsuario() {
@@ -65,13 +79,12 @@ export class EditarPage implements OnInit {
   
     console.log('Actualizando usuario con correo:', this.user.email);
     this.auth.putUsuario(this.user).subscribe(() => {
-      // Guardar los datos actualizados en sessionStorage
       sessionStorage.setItem('id', this.user.id.toString());
       sessionStorage.setItem('nombre', this.user.nombre);
       sessionStorage.setItem('email', this.user.email);
       sessionStorage.setItem('rut', this.user.rut);
-      // Guarda otros campos relevantes
-      
+      sessionStorage.setItem('fotoPerfil', this.user.imagen); 
+
       this.mensaje();
     }, error => {
       console.error('Error al actualizar el usuario:', error);
@@ -79,7 +92,6 @@ export class EditarPage implements OnInit {
     });
   }
   
-
   goBack() {
     this.router.navigate(['/perfil']);
   }
@@ -109,3 +121,4 @@ export class EditarPage implements OnInit {
     await alert.present();
   }
 }
+

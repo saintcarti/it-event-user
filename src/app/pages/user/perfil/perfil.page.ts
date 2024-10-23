@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { Users } from 'src/interfaces/users'; // Asegúrate de que esta ruta sea correcta
+import { Users } from 'src/interfaces/users'; 
 
 @Component({
   selector: 'app-perfil',
@@ -10,7 +10,7 @@ import { Users } from 'src/interfaces/users'; // Asegúrate de que esta ruta sea
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  usuario: Users | null = null; // Inicializa como null
+  usuario: Users | null = null; 
 
   constructor(private navCtrl: NavController, private router: Router, private auth: AuthService) {}
 
@@ -26,6 +26,8 @@ export class PerfilPage implements OnInit {
         (usuarios: Users[]) => {
           if (usuarios.length > 0) {
             this.usuario = usuarios[0]; // Asigna el usuario encontrado
+            // Cargar la imagen desde sessionStorage
+            this.usuario.fotoPerfil = sessionStorage.getItem('fotoPerfil') || this.usuario.fotoPerfil;
           } else {
             console.error('Usuario no encontrado');
             this.router.navigate(['/inicio']); // Redirige si no se encuentra el usuario
@@ -52,5 +54,4 @@ export class PerfilPage implements OnInit {
       window.location.reload(); // Regresar a perfil, esto recargará los datos
     });
   }
-  
 }

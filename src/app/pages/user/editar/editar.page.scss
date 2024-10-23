@@ -50,3 +50,14 @@ ion-content {
     }
   }
 }
+
+ion-avatar {
+  width: 70px;              // Ancho del avatar
+  height: 70px;             // Altura del avatar
+  margin-right: 15px;       // Espacio a la derecha del avatar
+}
+
+ion-item {
+  display: flex;            // Usar flexbox para alinear elementos
+  align-items: center;      // Centrar verticalmente
+}
