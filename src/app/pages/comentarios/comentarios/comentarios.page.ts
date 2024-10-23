@@ -28,4 +28,8 @@ export class ComentariosPage implements OnInit {
       }
     );
   }
+
+  regresar(){
+    this.router.navigate(['/tabs/tab1']);
+  }
 }

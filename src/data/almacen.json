@@ -180,6 +180,15 @@
       "imagen": "",
       "rut": "21326774-9",
       "isActive": true
+    },
+    {
+      "id": "ee45",
+      "nombre": "Sabrina",
+      "email": "sabrina123@gmail.com",
+      "password": "sabri1234",
+      "imagen": "",
+      "rut": "21617160-8",
+      "isActive": true
     }
   ],
   "Quejas": [
@@ -224,6 +233,12 @@
       "nombre": "juako",
       "email": "juako@gmail.com",
       "queja": "esta good "
+    },
+    {
+      "id": "c18c",
+      "nombre": "sabrina",
+      "email": "sabrina@gmail.com",
+      "queja": "me gusta la app funciona bien"
     }
   ]
 }
