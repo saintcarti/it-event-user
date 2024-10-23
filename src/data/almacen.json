@@ -280,6 +280,12 @@
       "eventoId": 1454,
       "texto": "Me gusto este evento",
       "email": "leon@gmail.com"
+    },
+    {
+      "id": "3c4e",
+      "eventoId": 7144,
+      "texto": "",
+      "email": "juako@gmail.com"
     }
   ]
 }

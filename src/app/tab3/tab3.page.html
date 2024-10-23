@@ -5,19 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item *ngFor="let participa of participacion">
+  <ion-list *ngIf="participacion.length > 0">
+    <ion-item *ngFor="let participa of participacion" lines="none">
       <ion-label>
         <h2>{{ participa.nombre }}</h2>
         <p>Fecha: {{ participa.fecha }}</p>
         <p>Lugar: {{ participa.lugar }}</p>
       </ion-label>
-      <ion-button (click)="borrarEvento(participa.id)">Eliminar</ion-button>
-      <ion-button color="primary" (click)="dejarOpinion(participa.id)">Dejar opinión</ion-button>
+      <div class="button-container">
+        <ion-button expand="full" (click)="borrarEvento(participa.id)" color="danger" fill="outline">Eliminar</ion-button>
+        <ion-button expand="full" color="primary" (click)="dejarOpinion(participa.id)" fill="outline">Dejar opinión</ion-button>
+      </div>
     </ion-item>
   </ion-list>
-  
+
   <ion-item *ngIf="participacion.length === 0">
     <ion-label>No hay eventos asistidos.</ion-label>
   </ion-item>
 </ion-content>
+
+
