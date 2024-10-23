@@ -16,7 +16,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngIf="usuario"> <!-- Solo muestra la tarjeta si usuario no es null -->
+  <ion-card *ngIf="usuario"> 
     <ion-card-header>
       <ion-card-subtitle>Usuario</ion-card-subtitle>
       <ion-card-title>{{ usuario?.nombre }}</ion-card-title>
@@ -34,11 +34,11 @@
         </ion-item>
       </ion-list>
 
-      <ion-button expand="block" fill="outline" color="primary" (click)="editarPerfil()">Editar Perfil</ion-button>
+      <ion-button expand="block" class="edit-button" (click)="editarPerfil()">Editar</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="!usuario"> <!-- Mensaje de carga o error -->
+  <ion-card *ngIf="!usuario"> 
     <ion-card-content>
       <ion-label>Cargando información del usuario...</ion-label>
     </ion-card-content>
