@@ -1,13 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>ComentarEvento</ion-title>
+    <ion-title>Comentar Evento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="regresar()">
+        Regresar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ComentarEvento</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list *ngIf="comentarios.length > 0">
+    <ion-item *ngFor="let comentario of comentarios">
+      <ion-label>
+        <h2>{{ comentario.email}}</h2>
+        <p>{{ comentario.texto }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="comentarios.length === 0">
+    <ion-label>No hay comentarios para este evento.</ion-label>
+  </ion-item>
 </ion-content>

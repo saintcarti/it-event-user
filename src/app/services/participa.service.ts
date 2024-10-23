@@ -2,44 +2,51 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Users } from 'src/interfaces/users';
-import { Participacion,ParticipacionNueva } from 'src/interfaces/participacion';
-import { Observable } from 'rxjs';
+import { Participacion, ParticipacionNueva } from 'src/interfaces/participacion';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { ComentarEvento } from 'src/interfaces/comentarios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParticipaService {
-
   private url = environment.apiUrl;
-  constructor(private http:HttpClient) { }
+  private comentariosSubject = new BehaviorSubject<ComentarEvento[]>([]);
+  comentarios$ = this.comentariosSubject.asObservable();
+
+  constructor(private http: HttpClient) { }
 
   GetUserByCorreo(email: any): Observable<Users> {
-    return this.http.get<Users>(`${environment.apiUrl}/usuarios/?email=${email}`);
+    return this.http.get<Users>(`${this.url}/usuarios/?email=${email}`);
   }
 
-  postParticipacion(nuevaParticipacion:ParticipacionNueva): Observable<ParticipacionNueva>{
-    return this.http.post<ParticipacionNueva>(`${environment.apiUrl}/participaciones`,nuevaParticipacion);
+  postParticipacion(nuevaParticipacion: ParticipacionNueva): Observable<ParticipacionNueva> {
+    return this.http.post<ParticipacionNueva>(`${this.url}/participaciones`, nuevaParticipacion);
   }
 
-  getParticipaciones(): Observable<Participacion[]>{
-    return this.http.get<Participacion[]>(`${environment.apiUrl}/Participacion`);
+  getParticipaciones(): Observable<Participacion[]> {
+    return this.http.get<Participacion[]>(`${this.url}/Participacion`);
   }
 
-  deleteParticipacion(id:number):Observable<any>{
-    return this.http.delete<Participacion>(`${environment.apiUrl}/Participacion/${id}`);
+  deleteParticipacion(id: number): Observable<any> {
+    return this.http.delete<Participacion>(`${this.url}/Participacion/${id}`);
   }
 
   getParticipacionByCorreo(email: any): Observable<Participacion[]> {
-    return this.http.get<Participacion[]>(`${environment.apiUrl}/Participacion/?email=${email}`);
+    return this.http.get<Participacion[]>(`${this.url}/Participacion/?email=${email}`);
   }
 
   guardarComentario(comentarioData: ComentarEvento): Observable<ComentarEvento> {
     return this.http.post<ComentarEvento>(`${this.url}/ComentarEvento`, comentarioData);
   }
 
-  getComentariosByParticipacionId(participacionId: number): Observable<ComentarEvento[]> {
-    return this.http.get<ComentarEvento[]>(`${this.url}/comentarios/?EventoId=${participacionId}`);
+  getComentariosByEventoId(eventoId: number): Observable<ComentarEvento[]> {
+    return this.http.get<ComentarEvento[]>(`${this.url}/ComentarEvento?eventoId=${eventoId}`);
   }
 
+  updateComentarios(eventoId: number) {
+    this.getComentariosByEventoId(eventoId).subscribe(comentarios => {
+      this.comentariosSubject.next(comentarios);
+    });
+  }
 }
