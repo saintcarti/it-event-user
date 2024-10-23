@@ -30,4 +30,8 @@ export class AuthService {
   GetUsuarioId(id: number): Observable<Users> {
     return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?id=${id}`);
   }
+
+  putUsuario(usuario:any):Observable<Users>{
+    return this.httpclient.put<Users>(`${environment.apiUrl}/usuarios/${usuario.id}`,usuario);
+  }
 }
