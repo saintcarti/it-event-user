@@ -61,3 +61,13 @@ ion-item {
   border: 1px solid #333;   
 }
 
+ion-avatar {
+  width: 60px;              
+  height: 60px;             
+  margin-right: 15px;       
+}
+
+ion-card-header {
+  display: flex;            
+  align-items: center;      
+}
