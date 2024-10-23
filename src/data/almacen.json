@@ -266,10 +266,18 @@
   ],
   "Participacion": [
     {
-      "id": "7144",
-      "nombre": "Taller de Desarrollo de Aplicaciones Móviles con Flutter",
-      "fecha": "2024-10-28",
-      "lugar": "Campus Tecnológico Creativa",
+      "id": "3008",
+      "nombre": "Taller de Desarrollo Web con JavaScript",
+      "fecha": "2024-11-05",
+      "lugar": "Centro de Capacitación TechHub",
+      "usuarioNombre": "leoncito",
+      "usuarioRut": "21325774-9"
+    },
+    {
+      "id": "1f10",
+      "nombre": "Curso Intensivo de Ciberseguridad",
+      "fecha": "2024-12-15",
+      "lugar": "Universidad Tecnológica",
       "usuarioNombre": "leoncito",
       "usuarioRut": "21325774-9"
     }
@@ -282,12 +290,6 @@
       "email": "leon@gmail.com"
     },
     {
-<<<<<<< HEAD
-      "id": "3c4e",
-      "eventoId": 7144,
-      "texto": "",
-      "email": "juako@gmail.com"
-=======
       "id": "47ce",
       "eventoId": 7144,
       "texto": "me gusto",
@@ -322,7 +324,6 @@
       "eventoId": 7144,
       "texto": "",
       "email": "leon@gmail.com"
->>>>>>> f9e568125ad8f28bb37acfc868462dc19fb3745c
     }
   ]
 }
