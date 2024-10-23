@@ -7,12 +7,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage implements OnInit {
+  //declarar
   evento: any;
   qrdata: string = '';
   nombre: string | null;
   rut: string | null;
 
   constructor(private activated: ActivatedRoute, private router: Router) {
+    //inicializar
+    
     this.activated.queryParams.subscribe(params => {
       this.evento = JSON.parse(params['event']);
     });

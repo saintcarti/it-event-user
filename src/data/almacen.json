@@ -196,7 +196,7 @@
       "email": "prueba123@gmail.cl"
     }
   ],
-  "Quejas": [
+  "Comentarios": [
     {
       "id": "1",
       "nombre": "",
@@ -244,6 +244,18 @@
       "nombre": "sabrina",
       "email": "sabrina@gmail.com",
       "queja": "me gusta la app funciona bien"
+    },
+    {
+      "id": "8989",
+      "nombre": "xavier",
+      "email": "xavirc03@gmail.com",
+      "queja": "me encanta la aplicacion chabales"
+    },
+    {
+      "id": "681a",
+      "nombre": "xavier",
+      "email": "mateo@gmail.com",
+      "queja": "dfljkdsjfljfksdldfs"
     }
   ],
   "Participacion": [

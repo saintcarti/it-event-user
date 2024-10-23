@@ -12,10 +12,10 @@ export class QuejasService {
   constructor(private http:HttpClient) { }
 
   getQuejas():Observable<any>{
-    return this.http.get<any>(this.url+'/Quejas');
+    return this.http.get<any>(this.url+'/Comentarios');
   }
 
   postQueja(queja:any):Observable<any>{
-    return this.http.post<any>(this.url+'/Quejas',queja);
+    return this.http.post<any>(this.url+'/Comentarios',queja);
   }
 }

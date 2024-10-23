@@ -38,7 +38,7 @@ export class InicioPage implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.loginForm.reset();
   }
 
   login() {

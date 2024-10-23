@@ -85,8 +85,8 @@ export class Tab1Page implements OnInit {
   }
   async mostrarMensaje(){
     const alert = await this.alertController.create({
-      header: 'Queja enviada',
-      message: 'Tu queja ha sido enviada con exito',
+      header: 'Comentario enviado',
+      message: 'Tu comentario ha sido enviado con exito',
       buttons: ['OK']
     });
     await alert.present();
