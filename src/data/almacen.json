@@ -94,16 +94,12 @@
     {
       "id": "2",
       "nombre": "xavier",
-      "email": "xavier@gmail.com",
-      "password": "xavier123",
-      "rut": "12345678-9",
-      "imagen": "",
-      "isActive": true
+      "email": "xavier@gmail.cl"
     },
     {
       "id": "6399",
-      "nombre": "xavier",
-      "email": "xavier123@gmail.com",
+      "nombre": "xavier123",
+      "email": "xavier123@gmail.cl",
       "password": "Mateo1005",
       "rut": "12345678-9",
       "imagen": "",

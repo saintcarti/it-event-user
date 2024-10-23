@@ -1,8 +1,11 @@
 
 export interface Users{
     id:number;
+    nombre:string;
     email:string;
     password:string;
+    rut:string;
+    imagen:string;
     isActive: boolean;
 }
 
