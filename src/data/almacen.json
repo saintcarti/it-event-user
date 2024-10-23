@@ -190,6 +190,15 @@
       "id": "341b",
       "nombre": "usuario",
       "email": "prueba123@gmail.cl"
+    },
+    {
+      "id": "f738",
+      "nombre": "leoncito",
+      "email": "leon@gmail.com",
+      "password": "Mateo1005",
+      "imagen": "",
+      "rut": "21325774-9",
+      "isActive": true
     }
   ],
   "Comentarios": [
@@ -255,6 +264,61 @@
     }
   ],
   "Participacion": [
-    {}
+    {
+      "id": "1454",
+      "nombre": "Taller de Desarrollo Web con JavaScript",
+      "fecha": "2024-11-05",
+      "lugar": "Centro de Capacitación TechHub",
+      "usuarioNombre": "xavier123",
+      "usuarioRut": "12345678-9"
+    },
+    {
+      "id": "6e72",
+      "nombre": "Curso Intensivo de Ciberseguridad",
+      "fecha": "2024-12-15",
+      "lugar": "Universidad Tecnológica",
+      "usuarioNombre": "xavier123",
+      "usuarioRut": "12345678-9"
+    },
+    {
+      "id": "83ba",
+      "nombre": "Conferencia Internacional de Inteligencia Artificial",
+      "fecha": "2024-12-01",
+      "lugar": "Centro de Convenciones Digital",
+      "usuarioNombre": "xavier123",
+      "usuarioRut": "12345678-9"
+    },
+    {
+      "id": "1abd",
+      "nombre": "Conferencia Internacional de Inteligencia Artificial",
+      "fecha": "2024-12-01",
+      "lugar": "Centro de Convenciones Digital",
+      "usuarioNombre": "xavier123",
+      "usuarioRut": "12345678-9"
+    },
+    {
+      "id": "d855",
+      "nombre": "Hackathon de Ciberseguridad",
+      "fecha": "2024-11-20",
+      "lugar": "Oficinas CyberSafe",
+      "usuarioNombre": "xavier123",
+      "usuarioRut": "12345678-9"
+    },
+    {
+      "id": "7144",
+      "nombre": "Taller de Desarrollo de Aplicaciones Móviles con Flutter",
+      "fecha": "2024-10-28",
+      "lugar": "Campus Tecnológico Creativa",
+      "usuarioNombre": "leoncito",
+      "usuarioRut": "21325774-9"
+    }
+  ],
+  "ComentarEvento": [
+    {
+      "id": "5ee5",
+      "eventoId": 1454,
+      "texto": "Me gusto este evento",
+      "email": "leon@gmail.com"
+    }
   ]
 }

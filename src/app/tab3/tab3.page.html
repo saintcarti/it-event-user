@@ -1,9 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-title>Eventos Asistidos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    
+  <ion-list>
+    <ion-item *ngFor="let participa of participacion">
+      <ion-label>
+        <h2>{{ participa.nombre }}</h2>
+        <p>Fecha: {{ participa.fecha }}</p>
+        <p>Lugar: {{ participa.lugar }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="borrarEvento(participa.id)">Borrar</ion-button>
+      <ion-button color="primary" (click)="dejarOpinion(participa.id)">Dejar opinión</ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item *ngIf="participacion.length === 0">
+    <ion-label>No hay eventos asistidos.</ion-label>
+  </ion-item>
 </ion-content>

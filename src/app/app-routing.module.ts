@@ -43,7 +43,15 @@ const routes: Routes = [
   {
     path: 'comentarios',
     loadChildren: () => import('./pages/comentarios/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+  },  {
+    path: 'dejar-opinion',
+    loadChildren: () => import('./pages/comentarios/dejar-opinion/dejar-opinion.module').then( m => m.DejarOpinionPageModule)
   },
+  {
+    path: 'comentar-evento',
+    loadChildren: () => import('./pages/comentarios/comentar-evento/comentar-evento.module').then( m => m.ComentarEventoPageModule)
+  },
+
   
 
 ];

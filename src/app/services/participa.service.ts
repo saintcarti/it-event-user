@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Users } from 'src/interfaces/users';
 import { Participacion,ParticipacionNueva } from 'src/interfaces/participacion';
 import { Observable } from 'rxjs';
+import { ComentarEvento } from 'src/interfaces/comentarios';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,23 @@ export class ParticipaService {
   }
 
   getParticipaciones(): Observable<Participacion[]>{
-    return this.http.get<Participacion[]>(`${environment.apiUrl}/participaciones`);
+    return this.http.get<Participacion[]>(`${environment.apiUrl}/Participacion`);
   }
 
-  deleteParticipacion(participacion:any):Observable<Participacion>{
-    return this.http.delete<Participacion>(`${environment.apiUrl}/participaciones/${participacion.id}`);
+  deleteParticipacion(id:number):Observable<any>{
+    return this.http.delete<Participacion>(`${environment.apiUrl}/Participacion/${id}`);
   }
+
+  getParticipacionByCorreo(email: any): Observable<Participacion[]> {
+    return this.http.get<Participacion[]>(`${environment.apiUrl}/Participacion/?email=${email}`);
+  }
+
+  guardarComentario(comentarioData: ComentarEvento): Observable<ComentarEvento> {
+    return this.http.post<ComentarEvento>(`${this.url}/ComentarEvento`, comentarioData);
+  }
+
+  getComentariosByParticipacionId(participacionId: number): Observable<ComentarEvento[]> {
+    return this.http.get<ComentarEvento[]>(`${this.url}/comentarios/?EventoId=${participacionId}`);
+  }
+
 }
