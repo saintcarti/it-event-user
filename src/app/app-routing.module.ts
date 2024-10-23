@@ -29,6 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/user/editar/editar.module').then(m => m.EditarModule),
     canActivate:[AutorizadoGuard]
   },
+  
   {
     path: 'perfil',
     loadChildren: () => import('./pages/user/perfil/perfil.module').then( m => m.PerfilPageModule),

@@ -15,9 +15,10 @@ export class AuthService {
     return this.httpclient.get<Users[]>(`${environment.apiUrl}/usuarios`);
   }
 
-  GetUserByCorreo(usuario: any): Observable<Users> {
-    return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?email=${usuario}`);
+  GetUserByCorreo(email: string): Observable<Users[]> {
+    return this.httpclient.get<Users[]>(`${environment.apiUrl}/usuarios/?email=${email}`);
   }
+  
 
   IsLoggedIn() {
     return sessionStorage.getItem('email') != null;
@@ -31,7 +32,8 @@ export class AuthService {
     return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?id=${id}`);
   }
 
-  putUsuario(usuario:any):Observable<Users>{
-    return this.httpclient.put<Users>(`${environment.apiUrl}/usuarios/${usuario.id}`,usuario);
+  putUsuario(usuario: any): Observable<Users> {
+    return this.httpclient.put<Users>(`${environment.apiUrl}/usuarios/${usuario.id}`, usuario);
   }
+  
 }
