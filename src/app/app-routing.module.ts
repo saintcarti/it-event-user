@@ -38,10 +38,12 @@ const routes: Routes = [
     path: 'detalle',
     loadChildren: () => import('./pages/eventos/detalle/detalle.module').then( m => m.DetallePageModule),
     canActivate:[AutorizadoGuard]
-  },  {
+  },
+  {
     path: 'comentarios',
     loadChildren: () => import('./pages/comentarios/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
-  }
+  },
+  
 
 ];
 @NgModule({
