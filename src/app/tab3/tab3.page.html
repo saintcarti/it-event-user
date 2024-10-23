@@ -12,7 +12,7 @@
         <p>Fecha: {{ participa.fecha }}</p>
         <p>Lugar: {{ participa.lugar }}</p>
       </ion-label>
-      <ion-button color="danger" (click)="borrarEvento(participa.id)">Borrar</ion-button>
+      <ion-button (click)="borrarEvento(participa.id)">Eliminar</ion-button>
       <ion-button color="primary" (click)="dejarOpinion(participa.id)">Dejar opinión</ion-button>
     </ion-item>
   </ion-list>

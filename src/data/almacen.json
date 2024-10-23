@@ -266,46 +266,6 @@
   ],
   "Participacion": [
     {
-      "id": "1454",
-      "nombre": "Taller de Desarrollo Web con JavaScript",
-      "fecha": "2024-11-05",
-      "lugar": "Centro de Capacitación TechHub",
-      "usuarioNombre": "xavier123",
-      "usuarioRut": "12345678-9"
-    },
-    {
-      "id": "6e72",
-      "nombre": "Curso Intensivo de Ciberseguridad",
-      "fecha": "2024-12-15",
-      "lugar": "Universidad Tecnológica",
-      "usuarioNombre": "xavier123",
-      "usuarioRut": "12345678-9"
-    },
-    {
-      "id": "83ba",
-      "nombre": "Conferencia Internacional de Inteligencia Artificial",
-      "fecha": "2024-12-01",
-      "lugar": "Centro de Convenciones Digital",
-      "usuarioNombre": "xavier123",
-      "usuarioRut": "12345678-9"
-    },
-    {
-      "id": "1abd",
-      "nombre": "Conferencia Internacional de Inteligencia Artificial",
-      "fecha": "2024-12-01",
-      "lugar": "Centro de Convenciones Digital",
-      "usuarioNombre": "xavier123",
-      "usuarioRut": "12345678-9"
-    },
-    {
-      "id": "d855",
-      "nombre": "Hackathon de Ciberseguridad",
-      "fecha": "2024-11-20",
-      "lugar": "Oficinas CyberSafe",
-      "usuarioNombre": "xavier123",
-      "usuarioRut": "12345678-9"
-    },
-    {
       "id": "7144",
       "nombre": "Taller de Desarrollo de Aplicaciones Móviles con Flutter",
       "fecha": "2024-10-28",
