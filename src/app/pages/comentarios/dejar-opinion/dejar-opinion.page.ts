@@ -30,11 +30,15 @@ export class DejarOpinionPage {
 
     this.participacionservice.guardarComentario(comentarioData).subscribe(
       () => {
-        this.router.navigate(['/comentarios', { eventoId: this.eventoId }]);
+        this.router.navigate(['/comentar-evento', { eventoId: this.eventoId }]);
       },
       (error) => {
         console.error("Error al guardar el comentario", error);
       }
     );
+  }
+
+  regresar(){
+    this.router.navigate(['/tabs/tab3']);
   }
 }
