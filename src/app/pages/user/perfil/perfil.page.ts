@@ -30,28 +30,32 @@ export class PerfilPage implements OnInit {
             this.usuario.fotoPerfil = sessionStorage.getItem('fotoPerfil') || this.usuario.fotoPerfil;
           } else {
             console.error('Usuario no encontrado');
-            this.router.navigate(['/inicio']); // Redirige si no se encuentra el usuario
+            this.router.navigate(['/inicio']); 
           }
         },
         (error) => {
           console.error('Error al obtener el usuario:', error);
-          this.router.navigate(['/inicio']); // Redirige en caso de error
+          this.router.navigate(['/inicio']); 
         }
       );
     } else {
       console.error('Correo no encontrado en sessionStorage');
-      this.router.navigate(['/inicio']); // Redirige si falta el correo
+      this.router.navigate(['/inicio']); 
     }
   }
 
   goBack() {
-    this.router.navigate(['/tabs/tab1']); // Regresar a la página anterior
+    this.router.navigate(['/tabs/tab1']); 
   }
 
   editarPerfil() {
     this.router.navigateByUrl('/editar').then(() => {
       this.router.navigateByUrl('/perfil');
-      window.location.reload(); // Regresar a perfil, esto recargará los datos
+      window.location.reload(); 
     });
+  }
+
+  verEventoRegistrado() {
+    this.router.navigate(['/registrados']); 
   }
 }

@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'comentar-evento',
     loadChildren: () => import('./pages/comentarios/comentar-evento/comentar-evento.module').then( m => m.ComentarEventoPageModule)
   },
+  {
+    path: 'registrados',
+    loadChildren: () => import('./pages/registrados/registrados.module').then( m => m.RegistradosPageModule)
+  },
 
   
 
