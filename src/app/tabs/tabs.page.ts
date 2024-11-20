@@ -17,6 +17,9 @@ export class TabsPage {
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('password');
     sessionStorage.removeItem('ingresado');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('fotoPerfil');
+
 
     // Redirigir a la página de inicio de sesión
     this.router.navigate(['/inicio'], { queryParams: { refresh: Date.now() } });

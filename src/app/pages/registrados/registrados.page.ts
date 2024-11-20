@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-
+import { ParticipaService } from 'src/app/services/participa.service';
 @Component({
   selector: 'app-registrados',
   templateUrl: './registrados.page.html',
@@ -10,25 +9,21 @@ import { HttpClient } from '@angular/common/http';
 export class RegistradosPage implements OnInit {
   events: any[] = [];
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router,
+              private apiservice:ParticipaService  ) {}
 
   ngOnInit() {
     this.loadEvents();
   }
 
-  loadEvents() {
-    this.http.get('assets/json/almacen.json').subscribe(
-      (data: any) => {
-        this.events = data.events; 
-      },
-      (error) => {
-        console.error('Error al cargar el JSON:', error);
-      }
-    );
+  loadEvents(){
+    this.apiservice.getParticipacionByCorreo(localStorage.getItem('email')).subscribe(data => {
+      this.events = data;
+    })
   }
 
   goBack() {
-    this.router.navigate(['/perfil']); 
+    this.router.navigate(['/tabs']); 
   }
 }
 

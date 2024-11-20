@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { Users } from 'src/interfaces/users'; 
+import { Users } from 'src/interfaces/users';
 
 @Component({
   selector: 'app-perfil',
@@ -10,52 +9,58 @@ import { Users } from 'src/interfaces/users';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  usuario: Users | null = null; 
+  usuario: Users | null = null; // Usuario cargado desde el backend
 
-  constructor(private navCtrl: NavController, private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
     this.loadUserData(); // Cargar datos del usuario al iniciar
   }
 
+  /**
+   * Cargar datos del usuario basado en el correo almacenado en sessionStorage
+   */
   loadUserData() {
-    const email = sessionStorage.getItem('email');
+    const email = sessionStorage.getItem('email'); // Obtener el correo del usuario
+    console.log('Correo obtenido:', email);
 
     if (email) {
-      this.auth.GetUserByCorreo(email).subscribe(
-        (usuarios: Users[]) => {
-          if (usuarios.length > 0) {
-            this.usuario = usuarios[0]; // Asigna el usuario encontrado
-            // Cargar la imagen desde sessionStorage
-            this.usuario.fotoPerfil = sessionStorage.getItem('fotoPerfil') || this.usuario.fotoPerfil;
+      this.auth.GetUserByCorreo(email).subscribe({
+        next: (resp: Users[]) => {
+          if (resp.length > 0) {
+            this.usuario = resp[0]; // Usar el primer resultado
+            console.log('Usuario cargado:', this.usuario);
           } else {
-            console.error('Usuario no encontrado');
-            this.router.navigate(['/inicio']); 
+            console.warn('No se encontró un usuario con este correo.');
           }
         },
-        (error) => {
-          console.error('Error al obtener el usuario:', error);
-          this.router.navigate(['/inicio']); 
-        }
-      );
+        error: (err) => {
+          console.error('Error al obtener datos del usuario:', err);
+        },
+      });
     } else {
-      console.error('Correo no encontrado en sessionStorage');
-      this.router.navigate(['/inicio']); 
+      console.warn('No se encontró el correo en sessionStorage.');
     }
   }
 
+  /**
+   * Navegar de vuelta a la página principal
+   */
   goBack() {
-    this.router.navigate(['/tabs/tab1']); 
+    this.router.navigate(['/tabs/tab1']); // Ajusta la ruta según sea necesario
   }
 
+  /**
+   * Navegar a la página de edición del perfil
+   */
   editarPerfil() {
-    this.router.navigateByUrl('/editar').then(() => {
-      this.router.navigateByUrl('/perfil');
-      window.location.reload(); 
-    });
+    this.router.navigate(['/editar']);
   }
 
+  /**
+   * Acción para ver los eventos registrados
+   */
   verEventoRegistrado() {
-    this.router.navigate(['/registrados']); 
+    console.log('Acción de ver evento registrado');
   }
 }
