@@ -21,11 +21,11 @@
     <ion-card-header>
       <ion-item lines="none">
         <ion-avatar slot="start">
-          <img 
-            [src]="usuario.imagen ? 'data:image/jpeg;base64,' + usuario.fotoPerfil : 'assets/img/default-avatar.png'" 
-            alt="Foto de perfil"
-          >
+          <img [src]="usuario.imagen || 'assets/default-avatar.png'" alt="Foto de perfil" >
+
+
         </ion-avatar>
+        
         <ion-card-title>{{ usuario?.nombre }}</ion-card-title>
       </ion-item>
     </ion-card-header>

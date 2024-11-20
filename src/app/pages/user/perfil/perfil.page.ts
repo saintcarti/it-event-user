@@ -63,4 +63,20 @@ export class PerfilPage implements OnInit {
   verEventoRegistrado() {
     console.log('Acción de ver evento registrado');
   }
+
+  getProfileImage(fotoPerfil: string | null | undefined): string {
+    // Si no hay foto de perfil, se usa una imagen predeterminada
+    if (!fotoPerfil) {
+      return 'assets/img/default-avatar.png';
+    }
+  
+    // Verifica si ya contiene el prefijo "data:image/png;base64,"
+    if (fotoPerfil.startsWith('data:image/')) {
+      return fotoPerfil; // Ya está en el formato correcto
+    }
+  
+    // Añade el prefijo si falta
+    return `data:image/png;base64,${fotoPerfil}`;
+  }
+  
 }
