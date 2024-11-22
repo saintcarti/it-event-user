@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiEventosService } from '../services/api-eventos.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tab2',
@@ -30,7 +31,7 @@ export class Tab2Page implements OnInit{
   }
 
   getImagePath(imagen: string): string {
-    return `assets/Imagenes/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
+    return `/${environment.apiUrl}/events/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
   }
   
 

@@ -7,7 +7,8 @@
 <ion-content >
   <form [formGroup]="registroForm" class="registroForm">
     <ion-item style="border-radius: 15px;">
-      <ion-input type="text" placeholder="Nombre" formControlName="nombre" label="Nombre: " labelPlacement="floating"></ion-input>
+      <ion-input type="text" placeholder="Nombre" formControlName="nombre" 
+      label="Nombre: " labelPlacement="floating"></ion-input>
     </ion-item>
 
     <div id="alerta" *ngIf="registroForm.get('nombre')?.invalid && (registroForm.get('nombre')?.dirty || registroForm.get('nombre')?.touched)">
