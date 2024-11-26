@@ -37,38 +37,6 @@ export class DetallePage implements OnInit {
     this.qrdata = '';
   }
 
-  async validarQr() {
-    if (this.qrdata.length > 0) {
-      // Comprobar si el QR ya ha sido guardado en el servidor
-      const qrExiste = await this.comprobarSiQrExiste();
-
-      if (qrExiste) {
-        // Si el QR ya existe, mostrar alerta
-        const alert = await this.al.create({
-          header: 'Ya se generó un QR',
-          message: 'Ya se generó un QR para este evento',
-          buttons: [{ text: 'Aceptar' }],
-        });
-        await alert.present();
-      } else {
-        // Si no existe, generar el QR y guardarlo
-        const alert = await this.al.create({
-          header: 'QR generado',
-          message: 'QR generado correctamente',
-          buttons: [
-            {
-              text: 'Guardar',
-              handler: () => {
-                this.generarQr();
-              },
-            },
-          ],
-        });
-        await alert.present();
-      }
-    }
-  }
-
   // Función para generar el QR
   generarQr() {
     this.qrdata = `${this.evento.nombre}  - ${this.evento.fecha} - ${this.evento.lugar} - ${this.nombre} - ${this.rut}`;
@@ -77,24 +45,12 @@ export class DetallePage implements OnInit {
   }
 
   // Función para comprobar si el QR ya existe en el servidor
-  async comprobarSiQrExiste() {
-    return new Promise<boolean>((resolve, reject) => {
-      this.saveQrDataService.getQrData().subscribe((data: any[]) => {
-        // Verificar si ya existe un QR para este evento y usuario
-        const qrExistente = data.find(qr =>
-          qr.usuarioRut === this.rut && qr.nombre === this.evento.nombre && qr.fecha === this.evento.fecha
-        );
-        resolve(qrExistente != null); // Devuelve true si el QR ya existe
-      }, error => {
-        console.error('Error al verificar si el QR existe:', error);
-        reject(false); // En caso de error, consideramos que no existe el QR
-      });
-    });
-  }
+  // Comprobar si el QR ya existe
+
 
   // Función para guardar el QR en el servidor
   saveData() {
-    const qrInfo = {
+    const qrInfo = { 
       nombre: this.evento.nombre,
       fecha: this.evento.fecha,
       lugar: this.evento.lugar,

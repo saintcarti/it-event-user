@@ -16,6 +16,10 @@ export class SaveQrDataService {
     return this.http.post(`${environment.apiUrl}/Participacion`, data);
   }
 
+  checkQrExistence(qrInfo: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/Participacion`, qrInfo);
+  }
+
   // Método para obtener todos los datos de los QR generados
   getQrData(): Observable<any[]> {
     return this.http.get<any[]>(`${environment.apiUrl}/Participacion`);

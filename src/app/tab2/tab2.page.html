@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" [fullscreen]="true" class="ion-padding">
-  <ion-list color="dark">
-    <ion-item color="dark" *ngFor="let e of eventos" (click)="buscarEvento(e)">
-      <ion-card color="dark" style=" border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+<ion-content style="background-color: #121212!important;" [fullscreen]="true" class="ion-padding">
+  <ion-list style="background-color: #121212!important;">
+    <ion-item style="background-color: #121212!important;" *ngFor="let e of eventos" (click)="buscarEvento(e)">
+      <ion-card  style=" border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); background-color: #121212!important;">
         <ion-card-header style="text-align: center; padding: 10px;">
           <ion-card-title style="font-size: 20px; color: white;">{{e.nombre}}</ion-card-title>
         </ion-card-header>

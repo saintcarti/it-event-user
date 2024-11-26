@@ -1,23 +1,22 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
     <ion-buttons slot="end">
-      <ion-button (click)="regresar()">
-        <ion-icon  slot="start"></ion-icon>
+      <ion-button style="color: white;" (click)="regresar()">
         Regresar
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark"  [fullscreen]="true">
+<ion-content style="background-color: #121212!important;"  [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar color="dark">
+    <ion-toolbar style="background-color: #121212!important;">
       <ion-title style="color: white;" size="large">Detalle de evento</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <!-- Tarjeta principal -->
-  <ion-card color="dark">
+  <ion-card style="background-color: #121212!important;">
     <ion-card-header>
       <ion-card-title style="font-size: 20px; color: white;">{{ evento.nombre }}</ion-card-title>
     </ion-card-header>
@@ -30,14 +29,14 @@
     </ion-card-content>
 
     <!-- Botón Generar QR -->
-    <ion-card-content color="dark" style="text-align: center;">
-      <ion-button (click)="validarQr()" class="qr-button">
+    <ion-card-content style="text-align: center;">
+      <ion-button (click)="generarQr()"  class="qr-button">
         Generar QR
       </ion-button>
     </ion-card-content>
 
     <!-- Código QR -->
-    <ion-card color="dark" class="ion-text-center">
+    <ion-card style="background-color: #121212!important;" class="ion-text-center">
       <ion-card-content style="text-align: center;">
         <qrcode *ngIf="qrdata" [qrdata]="qrdata" [width]="230" [errorCorrectionLevel]="'M'" [allowEmptyString]="true"></qrcode>
       </ion-card-content>

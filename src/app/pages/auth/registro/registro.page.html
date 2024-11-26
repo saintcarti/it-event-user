@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" >
+<ion-content style="background-color: #121212!important;" >
   <form [formGroup]="registroForm" class="registroForm">
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="text" placeholder="Nombre" formControlName="nombre" 
       label="Nombre: " labelPlacement="floating"></ion-input>
     </ion-item>
@@ -16,7 +16,7 @@
       <div *ngIf="registroForm.get('nombre')?.hasError('minlength')">*Nombre debe tener mínimo 3 caracteres</div>
     </div>
 
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="email" placeholder="Correo..." formControlName="email" label="Correo: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -25,7 +25,7 @@
       <div *ngIf="registroForm.get('email')?.hasError('email')">*Email no es válido</div>
     </div>
 
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="password" placeholder="Contraseña: " formControlName="password" label="Contraseña: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -34,7 +34,7 @@
       <div *ngIf="registroForm.get('password')?.hasError('pattern')">*La contraseña debe tener mínimo 8 caracteres, una letra y un número</div>
     </div>
 
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="text" placeholder="RUT" formControlName="rut" label="RUT: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -53,7 +53,7 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar style="padding: 20px;"  color="primary">
-      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-Admin</ion-title>
+      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-User</ion-title>
     <div style="text-align: center; margin-top: 35px;">
       <ion-button  color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
         <ion-icon style="color: white;" slot="icon-only" name="logo-facebook"></ion-icon>

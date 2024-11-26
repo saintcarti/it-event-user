@@ -1,7 +1,7 @@
-<ion-header style="background-color: #222428;" [translucent]="true">
-  <ion-toolbar color="dark" style="background-color: #222428;" mode="ios">
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="background-color: #222428;" mode="ios">
     <ion-buttons  slot="end">
-      <ion-button style="margin-right: 10px;" slot="end" shape="around" (click)="goBack()">
+      <ion-button style="margin-right: 10px; color: white;" slot="end" shape="around" (click)="goBack()">
         Regresar
       </ion-button>
     </ion-buttons>
@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" [fullscreen]="true">
+<ion-content style="background-color: #121212!important;" [fullscreen]="true">
   
   <!-- Card para mostrar información del usuario -->
   <ion-card *ngIf="usuario" style="background-color: #222428;"> 
@@ -37,7 +37,7 @@
       </ion-list>
 
       <!-- Botones para editar y ver otros detalles -->
-      <ion-button expand="block" class="edit-button" (click)="editarPerfil()">Editar</ion-button>
+      <ion-button expand="block" class="edit-button" style="color: white;" (click)="editarPerfil()">Editar</ion-button>
     </ion-card-content>
   </ion-card>
 

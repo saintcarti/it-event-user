@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" [fullscreen]="true" class="ion-text-center">
+<ion-content style="background-color: #1F1F1F;" [fullscreen]="true" class="ion-text-center">
   <form [formGroup]="loginForm" class="centered-form">
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
-      <ion-input  type="email" placeholder="Ingrese correo electronico..."  label="Correo" labelPlacement="floating"
+    <ion-item style=" background-color: #1F1F1F; border-radius: 15px; border: solid 1px white;">
+      <ion-input  type="email" placeholder="Ingrese correo electronico..."  label="Correo:" labelPlacement="floating"
         formControlName="email">
       </ion-input>
     </ion-item>
@@ -19,7 +19,7 @@
       *Correo invalido
     </div>
 
-    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #1F1F1F;">
       <ion-input type="password" placeholder="Ingrese su contraseña..." label="Contraseña: " labelPlacement="floating"
         formControlName="password"></ion-input>
     </ion-item>
@@ -39,13 +39,13 @@
 
     <!-- El registro ahora es un texto con enlace -->
     <div class="register-link">
-      <a (click)="registrar()" class="register-text">Registrarse</a>
+      <p>Aun no tienes cuenta? <a (click)="registrar()" class="register-text">Registrarse</a></p>
     </div>
   </form>
 </ion-content>
 <ion-footer>
   <ion-toolbar style="padding: 20px;"  color="primary">
-      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-Admin</ion-title>
+      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-User</ion-title>
     <div style="text-align: center; margin-top: 35px;">
       <ion-button  color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
         <ion-icon style="color: white;" slot="icon-only" name="logo-facebook"></ion-icon>
