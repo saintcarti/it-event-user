@@ -1,13 +1,14 @@
 <ion-header color="white">
-  <ion-toolbar>
-    <ion-title mode="ios">Registro</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title style="color: white;" mode="ios">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content style="background-color: #121212!important;" >
   <form [formGroup]="registroForm" class="registroForm">
-    <ion-item style="border-radius: 15px;">
-      <ion-input type="text" placeholder="Nombre" formControlName="nombre" label="Nombre: " labelPlacement="floating"></ion-input>
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
+      <ion-input type="text" placeholder="Nombre" formControlName="nombre" 
+      label="Nombre: " labelPlacement="floating"></ion-input>
     </ion-item>
 
     <div id="alerta" *ngIf="registroForm.get('nombre')?.invalid && (registroForm.get('nombre')?.dirty || registroForm.get('nombre')?.touched)">
@@ -15,7 +16,7 @@
       <div *ngIf="registroForm.get('nombre')?.hasError('minlength')">*Nombre debe tener mínimo 3 caracteres</div>
     </div>
 
-    <ion-item style="border-radius: 15px;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="email" placeholder="Correo..." formControlName="email" label="Correo: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -24,7 +25,7 @@
       <div *ngIf="registroForm.get('email')?.hasError('email')">*Email no es válido</div>
     </div>
 
-    <ion-item style="border-radius: 15px;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="password" placeholder="Contraseña: " formControlName="password" label="Contraseña: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -33,7 +34,7 @@
       <div *ngIf="registroForm.get('password')?.hasError('pattern')">*La contraseña debe tener mínimo 8 caracteres, una letra y un número</div>
     </div>
 
-    <ion-item style="border-radius: 15px;">
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #121212!important;">
       <ion-input type="text" placeholder="RUT" formControlName="rut" label="RUT: " labelPlacement="floating"></ion-input>
     </ion-item>
 
@@ -43,10 +44,29 @@
     </div>
 
     <div class="button-container">
-      <ion-button (click)="crearUsuario()" [disabled]="!registroForm.valid" shape="round" expand="block" fill="solid">
+      <ion-button style="color: white;" (click)="crearUsuario()" [disabled]="!registroForm.valid" shape="round" expand="block" fill="solid">
         Registrarse
       </ion-button>
       <p>Ya tienes una cuenta? <a (click)="inicio()">Inicia sesión</a></p>
     </div>
   </form>
 </ion-content>
+<ion-footer>
+  <ion-toolbar style="padding: 20px;"  color="primary">
+      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-User</ion-title>
+    <div style="text-align: center; margin-top: 35px;">
+      <ion-button  color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.twitter.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.instagram.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.linkedin.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-linkedin"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

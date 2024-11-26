@@ -64,7 +64,7 @@ export class EditarPage implements OnInit {
       
       reader.onload = () => {
         this.user.imagen = reader.result as string; 
-        sessionStorage.setItem('fotoPerfil', this.user.imagen);
+        sessionStorage.setItem('imagen', this.user.imagen);
       };
       
       reader.readAsDataURL(file);
@@ -83,7 +83,7 @@ export class EditarPage implements OnInit {
       sessionStorage.setItem('nombre', this.user.nombre);
       sessionStorage.setItem('email', this.user.email);
       sessionStorage.setItem('rut', this.user.rut);
-      sessionStorage.setItem('fotoPerfil', this.user.imagen); 
+      sessionStorage.setItem('imagen', this.user.imagen); 
 
       this.mensaje();
     }, error => {

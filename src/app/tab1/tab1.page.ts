@@ -19,8 +19,6 @@ export class Tab1Page implements OnInit {
   quejasForm:FormGroup;
 
   nuevaQueja : QuejasNuevas={
-    nombre:"",
-    email:"",
     queja:""
   }
 
@@ -33,8 +31,6 @@ export class Tab1Page implements OnInit {
     private router: Router  
   ) {
     this.quejasForm = this.fbuilder.group({
-      'nombre': ['', [Validators.required, Validators.minLength(3)]],
-      'email': ['', [Validators.required, Validators.email]],
       'queja': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]]
     });
   }
@@ -46,8 +42,6 @@ export class Tab1Page implements OnInit {
 
   Postquejas(){
     if(this.quejasForm.valid){
-      this.nuevaQueja.email = this.quejasForm.value.email;
-      this.nuevaQueja.nombre = this.quejasForm.value.nombre;
       this.nuevaQueja.queja = this.quejasForm.value.queja;
       this.quejasservice.postQueja(this.nuevaQueja).subscribe();
       this.quejasForm.reset();
@@ -71,9 +65,7 @@ export class Tab1Page implements OnInit {
       this.eventos = datos,
     )
   }
-  getImagePath(imagen: string): string {
-    return `assets/Imagenes/${imagen}`; // Asumiendo que tus imágenes están en assets/Imagenes/
-  }
+  
 
   async errorMensaje(){
     const alert = await this.alertController.create({

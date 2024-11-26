@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserNuevo } from 'src/interfaces/users';
+import { validarRut } from 'src/app/Validators/rut-validator';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -62,6 +64,8 @@ export class RegistroPage implements OnInit {
       })
     }
   }
+
+  
 
   async mostrarMensaje(){
     const alerta = await this.alertcontroller.create({
