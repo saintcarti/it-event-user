@@ -1,24 +1,21 @@
-<ion-header color="primary">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon>
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="end">
+      <ion-button slot="end" (click)="goBack()">
+        Regresar
       </ion-button>
     </ion-buttons>
     <ion-title>Eventos Registrados</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
   <ion-card *ngFor="let event of events">
-    <img />
-    <ion-card-header>
-      <ion-card-title>{{ event.nombre }}</ion-card-title>
-      <ion-card-subtitle>{{ event.fecha }}</ion-card-subtitle>
+    <img [src]="event.imagen" >
+    <ion-card-header color="dark">
+      <ion-card-title style="color: white;">Nombre evento: {{ event.nombre }}</ion-card-title>
+      <ion-card-subtitle style="color: white;">Fecha evento:  {{ event.fecha }}</ion-card-subtitle>
+      <p style="color: white;">Lugar: {{ event.lugar }}</p>
     </ion-card-header>
-    <ion-card-content>
-      <p><strong>Lugar:</strong> {{ event.lugar }}</p>
-      <p>{{ event.descripcion }}</p>
-    </ion-card-content>
   </ion-card>
 </ion-content>

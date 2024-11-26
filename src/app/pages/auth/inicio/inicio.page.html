@@ -1,13 +1,13 @@
 <ion-header color="white">
-  <ion-toolbar>
-    <ion-title mode="ios" style="text-align: center;">Inicio sesion</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title mode="ios" style="text-align: center; color: white;">Inicio sesion</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-text-center">
+<ion-content color="dark" [fullscreen]="true" class="ion-text-center">
   <form [formGroup]="loginForm" class="centered-form">
-    <ion-item style="border-radius: 15px;">
-      <ion-input type="email" placeholder="Ingrese correo electronico..."  label="Correo" labelPlacement="floating"
+    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
+      <ion-input  type="email" placeholder="Ingrese correo electronico..."  label="Correo" labelPlacement="floating"
         formControlName="email">
       </ion-input>
     </ion-item>
@@ -19,7 +19,7 @@
       *Correo invalido
     </div>
 
-    <ion-item style="border-radius: 15px;">
+    <ion-item color="dark" style="border-radius: 15px; border: solid 1px white;">
       <ion-input type="password" placeholder="Ingrese su contraseña..." label="Contraseña: " labelPlacement="floating"
         formControlName="password"></ion-input>
     </ion-item>
@@ -43,3 +43,22 @@
     </div>
   </form>
 </ion-content>
+<ion-footer>
+  <ion-toolbar style="padding: 20px;"  color="primary">
+      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-Admin</ion-title>
+    <div style="text-align: center; margin-top: 35px;">
+      <ion-button  color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.twitter.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.instagram.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.linkedin.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-linkedin"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

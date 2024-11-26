@@ -4,18 +4,22 @@
       <ion-title style="color: white; font-size: 15px;">Ajustes</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item button href="/perfil">
+  <ion-content  color="dark">
+    <ion-list color="dark">
+      <ion-item color="dark" button href="/perfil">
         <ion-icon style="color: white;" slot="start" name="person-circle-outline"></ion-icon>
         <ion-label style="color: white;">Mi Perfil</ion-label>
       </ion-item>
-      <ion-item button href="/registrados">
-        <ion-icon style="color: white;" slot="start" name="person-circle-outline"></ion-icon>
-        <ion-label style="color: white;">Registrados</ion-label>
+      <ion-item color="dark" button href="/registrados">
+        <ion-icon style="color: white;" slot="start" name="people-outline"></ion-icon>
+        <ion-label style="color: white;">Eventos registrados</ion-label>
       </ion-item>
-      <ion-item button (click)="logout()">
-        <ion-icon style="color: white;" slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-item color="dark" button href="/config">
+        <ion-icon style="color: white;" slot="start" name="construct-outline"></ion-icon>
+        <ion-label style="color: white;">Configuracion</ion-label>
+      </ion-item>
+      <ion-item color="dark" button (click)="logout()">
+        <ion-icon style="color: white;" slot="start" name="log-out-outline"></ion-icon>
       <ion-label style="color: white;">Cerrar Sesión</ion-label>
       </ion-item>
     </ion-list>
@@ -35,20 +39,20 @@
   </ion-header>
 
   <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="tab1" href="/tabs/tab1">
-        <ion-icon aria-hidden="true" name="home-outline" color="black"></ion-icon>
-        <ion-label color="primary">Home</ion-label>
+    <ion-tab-bar color="dark" slot="bottom">
+      <ion-tab-button  tab="tab1" href="/tabs/tab1">
+        <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
+        <ion-label color="light">Home</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="tab2" href="/tabs/tab2">
-        <ion-icon aria-hidden="true" name="calendar-outline" color="black"></ion-icon>
-        <ion-label color="primary">Eventos</ion-label>
+        <ion-icon aria-hidden="true" name="calendar-outline" ></ion-icon>
+        <ion-label color="light">Eventos</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="tab3" href="/tabs/tab3">
-        <ion-icon aria-hidden="true" name="calendar-outline" color="black"></ion-icon>
-        <ion-label color="primary">Participaciones</ion-label>
+        <ion-icon aria-hidden="true" name="calendar-outline" ></ion-icon>
+        <ion-label color="light">Participaciones</ion-label>
       </ion-tab-button>
       
       

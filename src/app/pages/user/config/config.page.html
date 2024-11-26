@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>config</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="backButton()">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">config</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Modo Oscuro / Claro
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-toggle (ionChange)="toggleTheme($event)" [checked]="isDarkMode"></ion-toggle>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+</ion-content>

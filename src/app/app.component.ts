@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {register} from 'swiper/element/bundle';
+import { Platform } from '@ionic/angular';
 register(); 
 interface Menu{
   icon:string;
@@ -38,5 +39,22 @@ export class AppComponent {
     },
   ]
 
-  constructor() {}
+  constructor(private platForm:Platform) {
+    this.initializaApp();
+  }
+
+  initializaApp(){
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (prefersDark){
+      document.body.setAttribute('data-theme','dark');
+    }else{
+      document.body.setAttribute('data-theme','light');
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',(e)=>{
+      const colorScheme = e.matches ? 'dark': 'light';
+      document.body.setAttribute('data-theme',colorScheme);
+    });
+  }
 }
