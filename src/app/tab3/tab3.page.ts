@@ -11,33 +11,36 @@ import { Participacion } from 'src/interfaces/participacion';
 export class Tab3Page implements OnInit, OnDestroy {
   participacion: any[] = [];
   email: string | null = sessionStorage.getItem('email');
+  rut: string | null = sessionStorage.getItem('rut');
   intervalId: any; // Variable para almacenar el ID del intervalo
 
   constructor(private participacionservice: ParticipaService, private router: Router) {}
 
   ngOnInit() {
-    if (this.email) {
-      this.loadEvents(this.email);
+    if (this.rut) {
+      this.loadEvents(this.rut);
       this.startAutoRefresh(); // Iniciar la actualización automática
     } else {
       console.error('No se encontró el correo electrónico en sessionStorage');
     }
   }
 
-  loadEvents(email: string) {
-    this.participacionservice.getParticipacionByCorreo(email).subscribe(
+  loadEvents(rut: string) {
+    this.participacionservice.getParticipacionByRut(rut).subscribe(
       (participa) => {
-        this.participacion = participa;
+        console.log("Participaciones cargadas: ", participa);  // Verifica la respuesta aquí
+        this.participacion = participa; // Asigna la respuesta a la variable
       },
       (error) => {
         console.error("Error al cargar las participaciones ", error);
       }
     );
   }
+  
 
   startAutoRefresh() {
     this.intervalId = setInterval(() => {
-      this.loadEvents(this.email!); // Recarga los eventos
+      this.loadEvents(this.rut!); // Recarga los eventos
     }, 5000); // Cada 5 segundos
   }
 

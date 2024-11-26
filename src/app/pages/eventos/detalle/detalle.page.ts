@@ -38,26 +38,52 @@ export class DetallePage implements OnInit {
   }
 
   // Función para generar el QR
-  generarQr() {
-    this.qrdata = `${this.evento.nombre}  - ${this.evento.fecha} - ${this.evento.lugar} - ${this.nombre} - ${this.rut}`;
-    console.log(this.qrdata);
-    this.saveData();
-  }
-
-  // Función para comprobar si el QR ya existe en el servidor
-  // Comprobar si el QR ya existe
-
-
-  // Función para guardar el QR en el servidor
-  saveData() {
-    const qrInfo = { 
+  async generarQr() {
+    const qrInfo = {
       nombre: this.evento.nombre,
       fecha: this.evento.fecha,
       lugar: this.evento.lugar,
       usuarioNombre: this.nombre,
-      usuarioRut: this.rut
+      usuarioRut: this.rut,
     };
 
+    // Verificar si el QR ya existe para este usuario y evento
+    const qrExiste = await this.checkIfQrExists(qrInfo);
+    
+    if (qrExiste) {
+      // Si el QR ya existe, mostrar una alerta
+      const alert = await this.al.create({
+        header: 'Ya estás registrado',
+        message: 'Ya estás registrado en este evento.',
+        buttons: [{ text: 'Aceptar' }]
+      });
+      await alert.present();
+    } else {
+      // Si no existe, generar el QR
+      this.qrdata = `${this.evento.nombre}  - ${this.evento.fecha} - ${this.evento.lugar} - ${this.nombre} - ${this.rut}`;
+      console.log(this.qrdata);
+
+      // Luego guardar el QR
+      this.saveData(qrInfo);
+    }
+  }
+
+  // Función para comprobar si el QR ya existe
+  checkIfQrExists(qrInfo: any): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.saveQrDataService.checkQrExistence(qrInfo).subscribe(
+        (exists) => {
+          resolve(exists); // Si existe, resolver con 'true'
+        },
+        (error) => {
+          reject(error); // Si hay un error, rechazar la promesa
+        }
+      );
+    });
+  }
+
+  // Función para guardar el QR en el servidor
+  saveData(qrInfo: any) {
     this.saveQrDataService.saveQrData(qrInfo).subscribe(
       response => {
         console.log('Datos del QR guardados correctamente', response);

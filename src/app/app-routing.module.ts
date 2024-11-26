@@ -21,10 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/auth/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'recuperar',
-    loadChildren: () => import('./pages/auth/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
-  },
-  {
     path: 'editar',
     loadChildren: () => import('./pages/user/editar/editar.module').then(m => m.EditarModule),
     canActivate:[AutorizadoGuard]
@@ -41,24 +37,15 @@ const routes: Routes = [
     canActivate:[AutorizadoGuard]
   },
   {
-    path: 'comentarios',
-    loadChildren: () => import('./pages/comentarios/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
-  },  {
     path: 'dejar-opinion',
-    loadChildren: () => import('./pages/comentarios/dejar-opinion/dejar-opinion.module').then( m => m.DejarOpinionPageModule)
+    loadChildren: () => import('./pages/comentarios/dejar-opinion/dejar-opinion.module').then( m => m.DejarOpinionPageModule),
+    canActivate:[AutorizadoGuard]
   },
   {
     path: 'comentar-evento',
-    loadChildren: () => import('./pages/comentarios/comentar-evento/comentar-evento.module').then( m => m.ComentarEventoPageModule)
-  },
-  {
-    path: 'registrados',
-    loadChildren: () => import('./pages/registrados/registrados.module').then( m => m.RegistradosPageModule)
-  },
-  {
-    path: 'config',
-    loadChildren: () => import('./pages/user/config/config.module').then( m => m.ConfigPageModule)
-  },
+    loadChildren: () => import('./pages/comentarios/comentar-evento/comentar-evento.module').then( m => m.ComentarEventoPageModule),
+    canActivate:[AutorizadoGuard]
+  }
 
   
 

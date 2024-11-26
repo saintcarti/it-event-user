@@ -29,7 +29,7 @@ export class PerfilPage implements OnInit {
         next: (resp: Users[]) => {
           if (resp.length > 0) {
             this.usuario = resp[0]; // Usar el primer resultado
-            console.log('Usuario cargado:', this.usuario);
+            console.log('Usuario cargado');
           } else {
             console.warn('No se encontró un usuario con este correo.');
           }
@@ -67,7 +67,7 @@ export class PerfilPage implements OnInit {
   getProfileImage(fotoPerfil: string | null | undefined): string {
     // Si no hay foto de perfil, se usa una imagen predeterminada
     if (!fotoPerfil) {
-      return 'assets/img/default-avatar.png';
+      return 'assets/imagenes/default-image.webp';
     }
   
     // Verifica si ya contiene el prefijo "data:image/png;base64,"

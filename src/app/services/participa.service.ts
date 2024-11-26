@@ -32,9 +32,10 @@ export class ParticipaService {
     return this.http.delete<Participacion>(`${this.url}/Participacion/${id}`);
   }
 
-  getParticipacionByCorreo(email: any): Observable<Participacion[]> {
-    return this.http.get<Participacion[]>(`${this.url}/Participacion/?email=${email}`);
+  getParticipacionByRut(rut: string): Observable<Participacion[]> {
+    return this.http.get<Participacion[]>(`${this.url}/Participacion/?usuarioRut=${rut}`);
   }
+  
 
   guardarComentario(comentarioData: ComentarEvento): Observable<ComentarEvento> {
     return this.http.post<ComentarEvento>(`${this.url}/ComentarEvento`, comentarioData);
