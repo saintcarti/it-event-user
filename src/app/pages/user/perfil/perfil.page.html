@@ -17,10 +17,10 @@
       <ion-card-title></ion-card-title>
       <ion-item lines="none">
         <ion-avatar slot="start">
-          <img [src]="usuario.imagen || 'assets/default-avatar.png'" alt="Foto de perfil" >
+          <img [src]="usuario.imagen || 'assets/Imagenes/default-image-user.webp'" alt="Foto de perfil" >
         </ion-avatar>
         
-        <ion-card-title style="color: white;" >{{ usuario?.nombre }}</ion-card-title>
+        <ion-card-title style="color: white;" >{{ usuario.nombre }}</ion-card-title>
       </ion-item>
     </ion-card-header>
 
@@ -28,11 +28,11 @@
       <ion-list style="background-color: #222428;  ">
         <ion-item style="background-color: #222428;">
           <ion-icon name="mail-outline" style="color: white;" slot="start"></ion-icon>
-          <ion-label style="background-color: #222428; color: white;">Email: {{ usuario?.email }}</ion-label>
+          <ion-label style="background-color: #222428; color: white;">Email: {{ usuario.email }}</ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="id-card-outline" style="color: white;" slot="start"></ion-icon>
-          <ion-label style="color: white;" >Rut: {{ usuario?.rut }}</ion-label>
+          <ion-label style="color: white;" >Rut: {{ usuario.rut }}</ion-label>
         </ion-item>
       </ion-list>
 
